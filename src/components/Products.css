@@ -1,0 +1,11 @@
+.custom-card {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+}
+
+.custom-card > .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

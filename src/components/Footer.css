@@ -1,0 +1,21 @@
+.footer-item {
+    margin: 0 24px;
+    margin-bottom: 12px;
+    white-space: nowrap;
+}
+
+.footer-item > * {
+    margin-right: 12px;
+}
+
+.footer-title {
+    color: #f8f9fa; /* 제목 색상 */
+}
+
+.footer-content {
+    color: #adb5bd; /* 내용 색상 */
+}
+
+.light-text {
+    font-weight: 300; /* light weight 설정 */
+}

@@ -1,0 +1,4 @@
+.banner-img {
+    height: 100vh;
+    object-fit: cover; /* 비율을 유지하면서 이미지가 fit되도록 설정 */
+}
