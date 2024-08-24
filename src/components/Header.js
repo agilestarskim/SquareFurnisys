@@ -10,7 +10,7 @@ export default function Header() {
   const navStyle = { width: "100%", justifyContent: "space-between", padding: "0 8rem" };
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary h-10" style={{minHeight: '100px'}}>
+    <Navbar expand="lg" className="h-10" style={{minHeight: '100px'}}>
       <Container>
         <Image src={logo} fluid width="250px" />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

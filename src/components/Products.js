@@ -1,6 +1,6 @@
 import React from "react";
 import "./Products.css";
-import { Button, Card, Row, Col, Container } from "react-bootstrap";
+import { Card, Row, Col, Container } from "react-bootstrap";
 import workstationImg from "../images/products-workstation.png";
 import executiveImg from "../images/products-executive.png";
 import partitionImg from "../images/products-partition.png";
@@ -19,22 +19,30 @@ export default function Products() {
     return (
         <Container fluid>
             <Row className="justify-content-center">
-                <Col xs={12}>
-                    <p className="display-3 font-weight-bold text-center mb-5">Products</p>
+                <Col xs={12} className="g-5 mb-4">
+                    <h1 className="text-center">Product</h1>
+                    <h4 className="text-center text-muted">제품정보</h4>
                 </Col>
             </Row>
-            <Row className="justify-content-start">
+            <Row xs={1} md={2} lg={3} className="g-5 justify-content-center">
                 {images.map((image, idx) => (
-                    <Col key={idx} xs={12} sm={12} md={6} lg={6} xl={4} className="mb-5">
-                        <Card className="custom-card">
-                            <Card.Img variant="top" src={image} style={{ height: "300px", width: "100%", objectFit: "cover" }}/>
+                    <Col key={idx}>                    
+                        <Card className="custom-card hover-zoom">
+                            <Card.Img 
+                                variant="top" 
+                                src={image} 
+                                style={{ 
+                                    height: "300px", 
+                                    width: "100%", 
+                                    objectFit: "cover" 
+                                }}
+                            />
                             <Card.Body>
                                 <Card.Title>Card Title</Card.Title>
                                 <Card.Text>
                                     Some quick example text to build on the card title and make up the
                                     bulk of the card's content.
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
                             </Card.Body>
                         </Card>
                     </Col>

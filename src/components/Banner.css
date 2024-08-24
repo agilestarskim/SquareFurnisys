@@ -1,4 +1,12 @@
 .banner-img {
-    height: 100vh;
-    object-fit: cover; /* 비율을 유지하면서 이미지가 fit되도록 설정 */
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.carousel,
+.carousel-item {
+    border-radius: 20px;
+    overflow: hidden; /* 둥근 모서리가 잘리도록 설정 */
+    background-color: lightgray; /* 배경색을 회색으로 설정 */
 }

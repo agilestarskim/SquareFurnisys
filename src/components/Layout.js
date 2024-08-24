@@ -6,9 +6,9 @@ import Footer from "./Footer"
 export default function Layout({ children }) {
   return (
     <Container fluid className="p-0">
-      <Header/>
-      {children}
-      <Footer/>
+      <Header className="mb-5"/>
+      <div className="mb-5">{children}</div>
+      <Footer className="mt-5"/>
     </Container>
   )
 }

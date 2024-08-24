@@ -7,10 +7,10 @@ import Container from 'react-bootstrap/Container'
 export default function Home() {
   return (
       <Layout>
-        <Container>
-          <Banner/>
-          <Products/>
-        </Container>
+          <Container>
+            <div className="mb-5"><Banner/></div>
+            <div className="mb-5"><Products/></div>
+          </Container>
       </Layout>
   )
 }
