@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.custom-card .card-text {
+    flex-grow: 1;
+}
+
 .hover-zoom {
     transition: transform 0.3s ease;
 }
