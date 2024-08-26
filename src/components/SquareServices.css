@@ -1,0 +1,21 @@
+.card-rounded {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.card-rounded img {
+    border-radius: 20px;
+    width: 100%; /* 이미지의 너비를 카드의 너비에 맞춥니다 */
+    height: 300px; /* 이미지의 높이를 고정합니다 */
+    object-fit: cover; /* 이미지가 고정된 크기에 맞게 조정됩니다 */
+    background-color: lightgrey;
+}
+
+.card-rounded .btn {
+    width: auto; /* 버튼의 너비를 내용에 맞게 설정합니다 */
+}
+.card-rounded .btn-primary {
+    background-color: #214c98;
+    border-color: #214c98;
+}

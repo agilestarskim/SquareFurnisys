@@ -43,8 +43,8 @@ const Products = () => {
     return (
         <Container fluid>
             <Row className="justify-content-center">
-                <Col xs={12} className="g-5 mb-4">
-                    <h1 className="text-center">Product</h1>
+                <Col xs={12} className="mb-4">
+                    <h1 className="text-center">Products</h1>
                     <h4 className="text-center text-muted">제품정보</h4>
                 </Col>
             </Row>
@@ -55,6 +55,7 @@ const Products = () => {
                             <Img 
                                 fluid={getImage(product.image)} 
                                 alt={product.title}
+                                className="card-img-top"
                                 style={{ 
                                 height: "300px", 
                                 width: "100%", 
