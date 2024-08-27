@@ -1,0 +1,13 @@
+/* 기본 스타일 */
+.nav-style {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 8rem;
+}
+  
+/* 화면 크기가 sm 이하일 때 적용되는 스타일 */
+@media (max-width: 992px) {
+    .nav-style {
+        padding: 0;
+    }
+}

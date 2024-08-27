@@ -11,7 +11,7 @@ const SquareServices = () => {
                 SQUARE <span className="highlight">SERVICES</span>
             </p>
             <div className="row">
-                <div className="col-md-4 mb-4">
+                <div className="col-md-6 col-lg-4 mb-4">
                     <div className="card card-rounded">
                         <img src={catalog} className="card-img-top img-fluid" alt="Service 1" />
                         <div className="card-body">
@@ -21,7 +21,7 @@ const SquareServices = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4 mb-4">
+                <div className="col-md-6 col-lg-4 mb-4">
                     <div className="card card-rounded">
                         <img src={showroom} className="card-img-top img-fluid" alt="Service 2" />
                         <div className="card-body">
@@ -31,7 +31,7 @@ const SquareServices = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4 mb-4">
+                <div className="col-md-6 col-lg-4 mb-4">
                     <div className="card card-rounded">
                         <img src={portfolio} className="card-img-top img-fluid" alt="Service 3" />
                         <div className="card-body">
