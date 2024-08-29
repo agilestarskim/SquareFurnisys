@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import logo from '../images/logo-gray.png';
+import logo from '../../images/logo-gray.png';
 import './Footer.css'; // 추가된 CSS 파일 import
 
 export default function Footer() {

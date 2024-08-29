@@ -1,8 +1,8 @@
 import React from 'react'
 import { Carousel } from 'react-bootstrap'
-import banner1 from '../images/banner1.png'
-import banner2 from '../images/banner2.png'
-import banner3 from '../images/banner3.png'
+import banner1 from '../../images/banner1.png'
+import banner2 from '../../images/banner2.png'
+import banner3 from '../../images/banner3.png'
 import './Banner.css' // 추가된 CSS 파일 import
 
 export default function Banner() {
