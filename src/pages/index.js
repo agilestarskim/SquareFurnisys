@@ -1,10 +1,10 @@
 import * as React from "react"
-import Layout from "../components/Layout"
-import Banner from "../components/Banner"
-import Products from "../components/Products"
-import Container from 'react-bootstrap/Container'
-import DesignConsulting from "../components/DesignConsulting"
-import SquareServices from "../components/SquareServices"
+import { Container } from 'react-bootstrap'
+import Layout from "../components/common/Layout"
+import Banner from "../components/home/Banner"
+import Products from "../components/home/Products"
+import DesignConsulting from "../components/home/DesignConsulting"
+import SquareServices from "../components/home/SquareServices"
 
 export default function Home() {
   return (

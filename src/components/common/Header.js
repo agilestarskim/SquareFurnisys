@@ -1,9 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Image from 'react-bootstrap/Image';
+import { Container, Nav, Navbar, Image }from 'react-bootstrap';
 import logo from '../images/logo.png';
 import './Header.css'; // 추가된 CSS 파일을 임포트합니다.
 

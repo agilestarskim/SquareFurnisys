@@ -1,9 +1,9 @@
 import * as React from "react"
-import Header from './Header'
 import { Container } from 'react-bootstrap'
+import Header from './Header'
 import Footer from "./Footer"
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <Container fluid className="p-0">
       <Header/>
@@ -12,3 +12,5 @@ export default function Layout({ children }) {
     </Container>
   )
 }
+
+export default Layout

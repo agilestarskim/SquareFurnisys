@@ -1,7 +1,7 @@
 import React from 'react';
-import catalog from '../images/catalog.png';
-import showroom from '../images/showroom.png';
-import portfolio from '../images/portfolio.png';
+import catalog from '../../images/catalog.png';
+import showroom from '../../images/showroom.png';
+import portfolio from '../../images/portfolio.png';
 import './SquareServices.css';
 
 const SquareServices = () => {

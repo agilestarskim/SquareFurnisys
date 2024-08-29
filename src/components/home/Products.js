@@ -17,7 +17,7 @@ const Products = () => {
               }
             }
           }
-          allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+          allFile(filter: { sourceInstanceName: { eq: "homeProducts" } }) {
             edges {
               node {
                 relativePath

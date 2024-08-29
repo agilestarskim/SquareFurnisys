@@ -1,6 +1,5 @@
-import React from 'react';
+import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS를 전역적으로 import
 import logo from '../images/logo-gray.png';
 import './Footer.css'; // 추가된 CSS 파일 import
 
