@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "./Products.css";
 import { Card, Row, Col, Container } from "react-bootstrap";
 
@@ -8,36 +8,34 @@ import { Card, Row, Col, Container } from "react-bootstrap";
 const Products = () => {
     const data = useStaticQuery(graphql`
         query {
-          site {
-            siteMetadata {
-              products {
-                image
-                title
-                description
-              }
-            }
-          }
-          allFile(filter: { sourceInstanceName: { eq: "homeProducts" } }) {
-            edges {
-              node {
-                relativePath
-                childImageSharp {
-                  fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid
-                  }
+            site {
+                siteMetadata {
+                    products {
+                        image
+                        title
+                        description
+                    }
                 }
-              }
-            }
           }
+            allFile(filter: { sourceInstanceName: { eq: "homeProducts" } }) {
+                edges {
+                    node {
+                        relativePath
+                        childImageSharp {
+                            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+                        }
+                    }
+                }
+            }
         }
-      `);
-
+    `);
+      
     const products = data.site.siteMetadata.products;
     const images = data.allFile.edges;
-
-    const getImage = (imageName) => {
-        const image = images.find(({ node }) => node.relativePath === imageName);
-        return image ? image.node.childImageSharp.fluid : null;
+    
+    const getImageByName = (imageName) => {
+        const imageNode = images.find(({ node }) => node.relativePath === imageName);
+        return imageNode ? getImage(imageNode.node.childImageSharp) : null;
     };
 
     return (
@@ -52,20 +50,20 @@ const Products = () => {
                 {products.map((product, idx) => (
                     <Col key={idx} className="d-flex">                    
                         <Card className="custom-card hover-zoom flex-grow-1">
-                            <Img 
-                                fluid={getImage(product.image)} 
-                                alt={product.title}
-                                className="card-img-top"
-                                style={{ 
-                                height: "300px", 
-                                width: "100%", 
-                                objectFit: "cover" 
-                                }}
-                            />
-                            <Card.Body className="d-flex flex-column">
-                                <Card.Title>{product.title}</Card.Title>
-                                <Card.Text>{product.description}</Card.Text>
-                            </Card.Body>
+                        <GatsbyImage 
+                            image={getImageByName(product.image)} 
+                            alt={product.title}
+                            className="card-img-top"
+                            style={{ 
+                            height: "300px", 
+                            width: "100%", 
+                            objectFit: "cover" 
+                            }}
+                        />
+                          <Card.Body className="d-flex flex-column">
+                              <Card.Title>{product.title}</Card.Title>
+                              <Card.Text>{product.description}</Card.Text>
+                          </Card.Body>
                         </Card>
                     </Col>
                 ))}
