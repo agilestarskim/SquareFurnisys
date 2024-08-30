@@ -48,6 +48,13 @@ module.exports = {
         path: `${__dirname}/src/images/HOME_PRODUCTS/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `workstation`,
+        path: `${__dirname}/src/images/WORKSTATION/`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,

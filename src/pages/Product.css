@@ -1,0 +1,23 @@
+.blue-letter {
+    color: #214c98;
+    font-weight: bold;
+}
+
+.card-img-top {
+    height: 200px; /* 원하는 높이로 설정 */
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    flex-grow: 1;
+}
