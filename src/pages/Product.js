@@ -1,9 +1,9 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/common/Layout";
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import "./Product.css"; // CSS 파일을 임포트합니다.
+import CardView from "../components/common/CardView";
 
 export default function Product() {
   const data = useStaticQuery(graphql`
@@ -73,17 +73,11 @@ export default function Product() {
               <Row className="mb-4">
                 {category.images.map((image, idx) => (
                   <Col xs={12} md={6} lg={3} className="mb-4" key={idx}>
-                    <Card className="h-100">
-                      <GatsbyImage
-                        image={image.src}
-                        alt={image.alt}
-                        className="card-img-top"
-                      />
-                      <Card.Body className="d-flex flex-column">
-                        <Card.Title>{image.alt}</Card.Title>
-                        <Card.Text className="flex-grow-1">{image.description}</Card.Text>
-                      </Card.Body>
-                    </Card>
+                    <CardView
+                      image={image.src}
+                      title={image.alt}
+                      description={image.description}
+                    />
                   </Col>
                 ))}
               </Row>

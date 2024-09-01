@@ -1,49 +1,64 @@
-import React from 'react';
-import catalog from '../../images/catalog.png';
-import showroom from '../../images/showroom.png';
-import portfolio from '../../images/portfolio.png';
-import './SquareServices.css';
+import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import CardButtonView from "../common/CardButtonView"; // CardButtonView 컴포넌트를 임포트합니다.
+import { Row, Col, Container } from "react-bootstrap";
 
 const SquareServices = () => {
-    return (
-        <div className="mt-5">
-            <p className="text-center fs-1">
-                SQUARE <span className="highlight">SERVICES</span>
-            </p>
-            <div className="row">
-                <div className="col-md-6 col-lg-4 mb-4">
-                    <div className="card card-rounded">
-                        <img src={catalog} className="card-img-top img-fluid" alt="Service 1" />
-                        <div className="card-body">
-                            <h3 className="card-title">Catalog</h3>
-                            <p className="text-muted">Square Furnisys의 카탈로그를 PDF로 제공합니다.</p>
-                            <button className="btn btn-primary btn-sm">다운로드</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-6 col-lg-4 mb-4">
-                    <div className="card card-rounded">
-                        <img src={showroom} className="card-img-top img-fluid" alt="Service 2" />
-                        <div className="card-body">
-                            <h3 className="card-title">Showroom</h3>
-                            <p className="text-muted">대표가구를 3D 입체 사진으로 만나보세요</p>
-                            <button className="btn btn-primary btn-sm">더 알아보기</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-6 col-lg-4 mb-4">
-                    <div className="card card-rounded">
-                        <img src={portfolio} className="card-img-top img-fluid" alt="Service 3" />
-                        <div className="card-body">
-                            <h3 className="card-title">Portfolio</h3>
-                            <p className="text-muted">Square Furnisys의 포트폴리오</p>
-                            <button className="btn btn-primary btn-sm">구경하기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+  const data = useStaticQuery(graphql`
+    query {
+        site {
+            siteMetadata {
+                services {
+                    title
+                    description
+                    image
+                    buttonText
+                }
+            }
+        }
+      allFile(filter: { sourceInstanceName: { eq: "service" }}) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const services = data.site.siteMetadata.services;
+  const images = data.allFile.edges;
+
+  const handleButtonClick = () => {
+    alert("Button clicked!");
+  };
+
+  return (
+    <Container fluid>
+      <Row xs={1} md={2} lg={3} className="g-5 justify-content-center">
+        {services.map((service, index) => {
+          const imageNode = images.find(image => image.node.relativePath.includes(service.image));
+          return (
+            <Col key={index} className="d-flex">
+              <div className="d-flex flex-grow-1">
+                <CardButtonView
+                  key={index}
+                  image={imageNode ? imageNode.node.childImageSharp.gatsbyImageData : null}
+                  title={service.title}
+                  description={service.description}
+                  buttonText= {service.buttonText}
+                  onButtonClick={handleButtonClick}
+                />
+              </div>
+            </Col>
+          );
+        })}
+      </Row>
+    </Container>
+  );
 };
 
 export default SquareServices;

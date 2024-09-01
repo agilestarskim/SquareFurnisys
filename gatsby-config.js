@@ -38,6 +38,26 @@ module.exports = {
         title: "Table",
         description: "다양한 용도로 활용 가능한 다목적 테이블"
       }
+    ],
+    services: [
+      {
+        image: "catalog.png",
+        title: "Catalog",
+        description: "스퀘어 퍼니시스의 제품 카탈로그를 확인하세요",
+        buttonText: "다운로드"
+      },
+      {
+        image: "showroom.png",
+        title: "Showroom",
+        description: "스퀘어 퍼니시스의 가구를 3D로 만나보세요",
+        buttonText: "구경하기"
+      },
+      {
+        image: "portfolio.png",
+        title: "Portfolio",
+        description: "스퀘어 퍼니시스의 프로젝트 사례를 살펴보세요",
+        buttonText: "구경하기"
+      }
     ]
   },
   plugins: [
@@ -53,6 +73,13 @@ module.exports = {
       options: {
         name: `workstation`,
         path: `${__dirname}/src/images/WORKSTATION/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `service`,
+        path: `${__dirname}/src/images/HOME_SERVICES/`,
       },
     },
     `gatsby-transformer-sharp`,
