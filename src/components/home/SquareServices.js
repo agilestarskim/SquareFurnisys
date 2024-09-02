@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import CardButtonView from "../common/CardButtonView"; // CardButtonView 컴포넌트를 임포트합니다.
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 const SquareServices = () => {
   const data = useStaticQuery(graphql`
@@ -37,27 +37,28 @@ const SquareServices = () => {
   };
 
   return (
-    <Container fluid>
-      <Row xs={1} md={2} lg={3} className="g-5 justify-content-center">
+    <div>
+      <Row className="g-4">
+        <p className="text-center fs-1">
+            SQUARE <span className="highlight">SERVICES</span>
+        </p>
         {services.map((service, index) => {
           const imageNode = images.find(image => image.node.relativePath.includes(service.image));
+
           return (
-            <Col key={index} className="d-flex">
-              <div className="d-flex flex-grow-1">
-                <CardButtonView
-                  key={index}
+            <Col xs={12} md={6} lg={4} className="mb-4" key={index}>              
+                <CardButtonView                  
                   image={imageNode ? imageNode.node.childImageSharp.gatsbyImageData : null}
                   title={service.title}
                   description={service.description}
                   buttonText= {service.buttonText}
                   onButtonClick={handleButtonClick}
                 />
-              </div>
             </Col>
           );
         })}
       </Row>
-    </Container>
+    </div>
   );
 };
 

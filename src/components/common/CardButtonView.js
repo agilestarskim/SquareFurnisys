@@ -14,7 +14,11 @@ const CardView = ({ image, title, description, buttonText, onButtonClick }) => {
       <div className="card-body">
         <p className="card-title text-left">{title}</p>
         <p className="card-text text-left text-muted">{description}</p>
-        <button className="card-button" onClick={onButtonClick}>{buttonText}</button>
+        <button 
+          className="card-button" 
+          onClick={onButtonClick}>
+          {buttonText}
+        </button>
       </div>
     </div>
   );

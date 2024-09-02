@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import Layout from "../components/common/Layout";
 import { Container, Row, Col } from 'react-bootstrap';
 import "./Product.css"; // CSS 파일을 임포트합니다.
@@ -8,12 +8,23 @@ import CardView from "../components/common/CardView";
 export default function Product() {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { sourceInstanceName: { eq: "workstation" }, relativePath: { regex: ".*/thumbnail.png/" } }) {
+      site {
+        siteMetadata {
+          products {
+            title
+            series {
+              title
+              description
+            }
+          }
+        }
+      }
+      allFile(filter: { relativePath: { regex: ".*/.*/thumbnail.png/" } }) {
         edges {
           node {
-            relativeDirectory
+            relativePath
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData(width: 300, placeholder: BLURRED)
             }
           }
         }
@@ -21,38 +32,16 @@ export default function Product() {
     }
   `);
 
-  const descriptions = {
-    "EXPAND": "확장 가능한 워크스테이션",
-    "SPACE": "공간 절약형 워크스테이션",
-    "NUEVO": "새로운 디자인의 워크스테이션",
-    "CUBE": "큐브 형태의 워크스테이션"
+  // siteMetadata에서 series의 title을 배열로 추출
+  const products = data.site.siteMetadata.products
+  const images = data.allFile.edges;
+  
+  const getImage = (productTitle, seriesTitle) => {
+    const path = `${productTitle}/${seriesTitle}/thumbnail.png`;
+    console.log(path);
+    const imageNode = images.find(({ node }) => node.relativePath === path);
+    return imageNode ? imageNode.node.childImageSharp.gatsbyImageData : null;
   };
-
-  const order = ["EXPAND", "SPACE", "NUEVO", "CUBE"];
-
-  const sortedImages = data.allFile.edges
-    .map(({ node }) => {
-      const alt = node.relativeDirectory.split('/').pop().toUpperCase();
-      return {
-        src: node.childImageSharp.gatsbyImageData,
-        alt: alt,
-        description: descriptions[alt]
-      };
-    })
-    .sort((a, b) => order.indexOf(a.alt) - order.indexOf(b.alt));
-  
-  
-
-  const productCategories = [
-    {
-      title: "Workstation",
-      images: sortedImages
-    },
-    { title: "Executive", images: [] },
-    { title: "Table", images: [] },
-    { title: "Storage", images: [] },
-    { title: "Partition", images: [] }
-  ];
 
   const renderTitle = (title) => {
     return (
@@ -66,25 +55,31 @@ export default function Product() {
   return (
     <Layout>
       <Container>
-        {productCategories.map((category, index) => (
-          <React.Fragment key={index}>
-            {renderTitle(category.title)}
-            {category.title === "Workstation" && (
-              <Row className="mb-4">
-                {category.images.map((image, idx) => (
-                  <Col xs={12} md={6} lg={3} className="mb-4" key={idx}>
-                    <CardView
-                      image={image.src}
-                      title={image.alt}
-                      description={image.description}
-                    />
-                  </Col>
+        <Row>
+          <Col>
+            {products.map((product, index) => (
+              <div key={index}>
+                {renderTitle(product.title)}
+
+                <Row className="mb-4">
+                  {product.series.map((series, idx) => (
+                    <Col xs={12} md={6} lg={4} key={idx} className="g-5">
+                        <Link to={"/"} style={{ textDecoration: 'none' }}>
+                            <CardView
+                                image={getImage(product.title, series.title)}   
+                                title={series.title}
+                                description={series.description}
+                            />
+                        </Link>
+                    </Col>
                 ))}
-              </Row>
-            )}
-          </React.Fragment>
-        ))}
+              </Row>  
+              </div>
+            ))}
+          </Col>
+        </Row>
       </Container>
     </Layout>
   );
 }
+

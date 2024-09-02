@@ -14,29 +14,50 @@ module.exports = {
     author: "Your Name",
     products: [
       {
-        image: "products-workstation.png",
         title: "Workstation",
-        description: "최고의 사무용 워크스테이션을 만나보세요"
+        description: "최고의 사무용 워크스테이션을 만나보세요",
+        series: [
+            {
+              title: "EXPAND",
+              description: "확장 가능한 워크스테이션"
+            },
+            {
+              title: "SPACE",
+              description: "공간 절약형 워크스테이션"
+            },
+            {
+              title: "NUEVO",
+              description: "새로운 디자인의 워크스테이션"
+            },
+            {
+              title: "CUBE",
+              description: "큐브 형태의 워크스테이션"
+            }
+        ]
       },
-      {
-        image: "products-executive.png",
-        title: "Executive Desk",
-        description: "고급스러운 임원용 책상으로 품격을 더하세요"
+      {        
+        title: "Executive",
+        description: "고급스러운 임원용 책상으로 품격을 더하세요",
+        series: [
+        ]
       },
-      {
-        image: "products-partition.png",
+      {        
         title: "Partition",
-        description: "프라이버시를 지켜주는 견고한 파티션"
+        description: "프라이버시를 지켜주는 견고한 파티션",
+        series: [
+        ]
       },
-      {
-        image: "products-storage.png",
+      {        
         title: "Storage",
-        description: "넉넉한 수납 공간으로 사무실을 깔끔하게 정리하세요"
+        description: "넉넉한 수납 공간으로 사무실을 깔끔하게 정리하세요",
+        series: [
+        ]
       },
-      {
-        image: "products-table.png",
+      {        
         title: "Table",
-        description: "다양한 용도로 활용 가능한 다목적 테이블"
+        description: "다양한 용도로 활용 가능한 다목적 테이블",
+        series: [
+        ]
       }
     ],
     services: [
@@ -64,22 +85,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `homeProducts`,
-        path: `${__dirname}/src/images/HOME_PRODUCTS/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `workstation`,
-        path: `${__dirname}/src/images/WORKSTATION/`,
+        name: `products`,
+        path: `${__dirname}/src/images/Products/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `service`,
-        path: `${__dirname}/src/images/HOME_SERVICES/`,
+        path: `${__dirname}/src/images/Services/`,
       },
     },
     `gatsby-transformer-sharp`,

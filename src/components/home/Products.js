@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import CardView from "../common/CardView";
 
 
@@ -11,13 +11,12 @@ const Products = () => {
             site {
                 siteMetadata {
                     products {
-                        image
                         title
                         description
                     }
                 }
             }
-            allFile(filter: { sourceInstanceName: { eq: "homeProducts" } }) {
+            allFile(filter: { sourceInstanceName: { eq: "products" }, relativePath: { regex: "/^[^/]+/thumbnail.png$/" } }) {
                 edges {
                     node {
                         relativePath
@@ -33,29 +32,30 @@ const Products = () => {
     const products = data.site.siteMetadata.products;
     const images = data.allFile.edges;
     
-    const getImageByName = (imageName) => {
+    const getImageByName = (productTitle) => {
+        const folderName = productTitle;
+        const imageName = `${folderName}/thumbnail.png`;
         const imageNode = images.find(({ node }) => node.relativePath === imageName);
         return imageNode ? getImage(imageNode.node.childImageSharp) : null;
     };
 
     return (
-        <Container fluid>
+        <div>
             <Row className="justify-content-center">
                 <Col xs={12} className="mb-4">
                     <h1 className="text-center">Products</h1>
                     <h4 className="text-center text-muted">제품정보</h4>
                 </Col>
             </Row>
-            <Row xs={1} md={2} lg={3} className="g-5 justify-content-center">
+            <Row className="mb-4">
                 {products.map((product, idx) => (
-                    <Col key={idx} className="d-flex">
+                    <Col xs={12} md={6} lg={4} key={idx} className="g-5 mb-5">
                         <Link 
-                            to={"/Product"}  
-                            className="d-flex flex-grow-1"
+                            to={"/Product"}
                             style={{ textDecoration: 'none' }}
                         >
                             <CardView
-                                image={getImageByName(product.image)}
+                                image={getImageByName(product.title)}
                                 title={product.title}
                                 description={product.description}
                             />
@@ -63,7 +63,7 @@ const Products = () => {
                     </Col>
                 ))}
             </Row>
-        </Container>
+        </div>
     );
 }
 
