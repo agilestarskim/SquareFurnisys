@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import { getImage as getGatsbyImage, StaticImage} from "gatsby-plugin-image";
 import { Row, Col } from "react-bootstrap";
 import CardView from "../common/CardView";
 
@@ -36,7 +36,16 @@ const Products = () => {
         const folderName = productTitle;
         const imageName = `${folderName}/thumbnail.png`;
         const imageNode = images.find(({ node }) => node.relativePath === imageName);
-        return imageNode ? getImage(imageNode.node.childImageSharp) : null;
+
+        if (imageNode) {
+            return imageNode.node.childImageSharp.gatsbyImageData;
+        } else {
+            return getGatsbyImage({
+                src: "../../images/noResult.png",
+                width: 300,
+                placeholder: "blurred"
+            });            
+        }
     };
 
     return (
@@ -51,7 +60,7 @@ const Products = () => {
                 {products.map((product, idx) => (
                     <Col xs={12} md={6} lg={4} key={idx} className="g-5 mb-5">
                         <Link 
-                            to={"/Product"}
+                            to={`/Product#${product.title}`}
                             style={{ textDecoration: 'none' }}
                         >
                             <CardView

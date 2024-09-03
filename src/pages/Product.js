@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import Layout from "../components/common/Layout";
 import { Container, Row, Col } from 'react-bootstrap';
-import "./Product.css"; // CSS 파일을 임포트합니다.
+import "./Product.css";
 import CardView from "../components/common/CardView";
 
 export default function Product() {
@@ -35,10 +35,9 @@ export default function Product() {
   // siteMetadata에서 series의 title을 배열로 추출
   const products = data.site.siteMetadata.products
   const images = data.allFile.edges;
-  
+
   const getImage = (productTitle, seriesTitle) => {
     const path = `${productTitle}/${seriesTitle}/thumbnail.png`;
-    console.log(path);
     const imageNode = images.find(({ node }) => node.relativePath === path);
     return imageNode ? imageNode.node.childImageSharp.gatsbyImageData : null;
   };
@@ -56,15 +55,15 @@ export default function Product() {
     <Layout>
       <Container>
         <Row>
-          <Col>
+          <Col className="mt-4">
             {products.map((product, index) => (
-              <div key={index}>
+              <div key={index} id={product.title}>
                 {renderTitle(product.title)}
 
                 <Row className="mb-4">
                   {product.series.map((series, idx) => (
                     <Col xs={12} md={6} lg={4} key={idx} className="g-5">
-                        <Link to={"/"} style={{ textDecoration: 'none' }}>
+                        <Link to={`/`} style={{ textDecoration: 'none' }}>
                             <CardView
                                 image={getImage(product.title, series.title)}   
                                 title={series.title}

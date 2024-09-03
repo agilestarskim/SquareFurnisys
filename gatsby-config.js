@@ -17,46 +17,122 @@ module.exports = {
         title: "Workstation",
         description: "최고의 사무용 워크스테이션을 만나보세요",
         series: [
-            {
-              title: "EXPAND",
-              description: "확장 가능한 워크스테이션"
-            },
-            {
-              title: "SPACE",
-              description: "공간 절약형 워크스테이션"
-            },
-            {
-              title: "NUEVO",
-              description: "새로운 디자인의 워크스테이션"
-            },
-            {
-              title: "CUBE",
-              description: "큐브 형태의 워크스테이션"
-            }
+          {
+            title: "EXPAND",
+            description: "확장 가능한 워크스테이션"
+          },
+          {
+            title: "SPACE",
+            description: "공간 절약형 워크스테이션"
+          },
+          {
+            title: "NUEVO",
+            description: "새로운 디자인의 워크스테이션"
+          },
+          {
+            title: "CUBE",
+            description: "큐브 형태의 워크스테이션"
+          }
         ]
       },
       {        
         title: "Executive",
         description: "고급스러운 임원용 책상으로 품격을 더하세요",
         series: [
+          {
+            title: "BISTRO",
+            description: "프리미엄한 디자인의 임원용 책상"
+          },
+          {
+            title: "GRADE 1",
+            description: "고급스러운 임원용 책상"
+          },
+          {
+            title: "GRAVITY",
+            description: "고전적인 임원용 책상"
+          },
+          {
+            title: "DUKE",
+            description: "품격 있는 임원용 책상"
+          },
+          {
+            title: "TOPLINE",
+            description: "최고급 임원용 책상"
+          }
         ]
       },
       {        
         title: "Partition",
         description: "프라이버시를 지켜주는 견고한 파티션",
         series: [
+          {
+            title: "SCREEN (acrylic, wood)",
+            description: "견고한 파티션"
+          },
+          {
+            title: "SCREEN, PARTITION (felt, fabric)",
+            description: "세련된 파티션"
+          },
+          {
+            title: "PARTITION 45T Econo",
+            description: "파도 모양 파티션"
+          },
+          {
+            title: "PARTITION 65T Aura",
+            description: "지그재그 모양 파티션"
+          },
+          {
+            title: "PARTITION 66T Union",
+            description: "지그재그 모양 파티션"
+          }
         ]
       },
       {        
         title: "Storage",
         description: "넉넉한 수납 공간으로 사무실을 깔끔하게 정리하세요",
         series: [
+          {
+            title: "WOOD CABINET",
+            description: "나무로 만든 수납장"
+          },
+          {
+            title: "STEEL CABINET",
+            description: "철제로 만든 수납장"
+          },
+          {
+            title: "LOCKER",
+            description: "사물함"
+          },
+          {
+            title: "사물함",
+            description: "사물함"
+          }
         ]
       },
       {        
         title: "Table",
         description: "다양한 용도로 활용 가능한 다목적 테이블",
         series: [
+          {
+            title: "CTR",
+            description: "회의용 테이블"
+          },
+          {
+            title: "SR6",
+            description: "회의용 테이블"
+          },
+          {
+            title: "ER2",
+            description: "식당용 테이블"
+          },
+          {
+            title: "Combination / Kitchen",
+            description: "교육용 테이블"
+          },
+          {
+            title: "FOLDING TABLE",
+            description: "접이식 테이블"
+          }
         ]
       }
     ],
@@ -86,15 +162,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `products`,
-        path: `${__dirname}/src/images/Products/`,
-      },
+        path: `${__dirname}/src/images/Products/`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `service`,
-        path: `${__dirname}/src/images/Services/`,
-      },
+        path: `${__dirname}/src/images/Services/`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
