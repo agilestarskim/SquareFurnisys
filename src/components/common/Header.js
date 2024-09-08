@@ -16,7 +16,7 @@ export default function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto nav-style">
-            <Link to="/Product" className="nav-link" style={navLinkStyle}>제품정보</Link>
+            <Link to="/product" className="nav-link" style={navLinkStyle}>제품정보</Link>
             <Link to="/Design" className="nav-link" style={navLinkStyle}>디자인</Link>
             <Link to="/Portfolio" className="nav-link" style={navLinkStyle}>납품실적</Link>
             <Link to="/Customer" className="nav-link" style={navLinkStyle}>고객지원</Link>

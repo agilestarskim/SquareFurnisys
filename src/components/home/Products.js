@@ -60,7 +60,7 @@ const Products = () => {
                 {products.map((product, idx) => (
                     <Col xs={12} md={6} lg={4} key={idx} className="g-5 mb-5">
                         <Link 
-                            to={`/Product#${product.title}`}
+                            to={`/product#${product.title}`}
                             style={{ textDecoration: 'none' }}
                         >
                             <CardView

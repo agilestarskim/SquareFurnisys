@@ -10,6 +10,13 @@
   transform: scale(1.05);
 }
 
+/* sm 사이즈(600px 이하)일 때 .custom-card:hover 스타일 비활성화 */
+@media (max-width: 600px) {
+  .custom-card:hover {
+    transform: none; /* transform 스타일을 초기화 */
+  }
+}
+
 .card-img {
   width: 100%;
   height: 250px;

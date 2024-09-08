@@ -1,9 +1,9 @@
 import * as React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import Layout from "../components/common/Layout";
+import Layout from "../../components/common/Layout";
 import { Container, Row, Col } from 'react-bootstrap';
-import "./Product.css";
-import CardView from "../components/common/CardView";
+import "./index.css";
+import CardView from "../../components/common/CardView";
 
 export default function Product() {
   const data = useStaticQuery(graphql`
@@ -63,7 +63,7 @@ export default function Product() {
                 <Row className="mb-4">
                   {product.series.map((series, idx) => (
                     <Col xs={12} md={6} lg={4} key={idx} className="g-5">
-                        <Link to={`/`} style={{ textDecoration: 'none' }}>
+                        <Link to={`${series.title}`} style={{ textDecoration: 'none' }}>
                             <CardView
                                 image={getImage(product.title, series.title)}   
                                 title={series.title}

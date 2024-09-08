@@ -1,0 +1,11 @@
+.series-detail-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.series-detail-description {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color:gray
+}
