@@ -11,11 +11,11 @@ const Detail = ({ data, pageContext }) => {
   const product = data.site.siteMetadata.products.find(product => product.title === productTitle);
   const series = product ? product.series.find(series => series.title === seriesTitle) : "Not Found";
 
-    const images = data.allFile.edges.sort((a, b) => {
-      const numA = parseInt(a.node.name.match(/\d+/), 10);
-      const numB = parseInt(b.node.name.match(/\d+/), 10);
-      return numA - numB;
-    });
+  const images = data.allFile.edges.sort((a, b) => {
+    const numA = parseInt(a.node.name.match(/\d+/), 10);
+    const numB = parseInt(b.node.name.match(/\d+/), 10);
+    return numA - numB;
+  });
   
   return (
     <Layout>
@@ -26,7 +26,7 @@ const Detail = ({ data, pageContext }) => {
         <p className="series-detail-description">{series.description}</p>
         <Row className="mb-4">
           {images.map(({ node }, index) => (
-            <Col md={12} lg={6} key={index} className="g-5">
+            <Col md={12} lg={4} key={index} className="mt-5 mb-5">
               <GatsbyImage
                 image={getImage(node.childImageSharp)}
                 alt={node.name}
