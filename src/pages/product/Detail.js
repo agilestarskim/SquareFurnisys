@@ -6,11 +6,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./Detail.css";
 
 const Detail = ({ data, pageContext }) => {
-  const { productTitle, seriesTitle, relativeDirectory } = pageContext;
+  const { productTitle, seriesTitle } = pageContext;
 
-  const series = data.site.siteMetadata.products
-    .find(product => product.title === productTitle)
-    .series.find(series => series.title === seriesTitle);
+  const product = data.site.siteMetadata.products.find(product => product.title === productTitle);
+  const series = product ? product.series.find(series => series.title === seriesTitle) : "Not Found";
 
     const images = data.allFile.edges.sort((a, b) => {
       const numA = parseInt(a.node.name.match(/\d+/), 10);
@@ -44,7 +43,7 @@ const Detail = ({ data, pageContext }) => {
 };
 
 export const query = graphql`
-  query($relativeDirectory: String!) {
+  query($relativeDirectory: String) {
     site {
       siteMetadata {
         products {

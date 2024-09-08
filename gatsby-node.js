@@ -27,9 +27,9 @@ exports.createPages = async ({ graphql, actions }) => {
         path: `/product/${series.title}`,
         component: path.resolve(`./src/pages/product/Detail.js`),
         context: {
+            relativeDirectory: `${product.title}/${series.title}`,
             productTitle: product.title,
-            seriesTitle: series.title,
-            relativeDirectory: `${product.title}/${series.title}`
+            seriesTitle: series.title,            
         },
       });
     });

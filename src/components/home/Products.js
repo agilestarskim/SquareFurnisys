@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import { getImage as getGatsbyImage, StaticImage} from "gatsby-plugin-image";
+import { getImage as getGatsbyImage } from "gatsby-plugin-image";
 import { Row, Col } from "react-bootstrap";
 import CardView from "../common/CardView";
 
