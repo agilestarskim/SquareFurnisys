@@ -66,23 +66,23 @@ module.exports = {
         description: "프라이버시를 지켜주는 견고한 파티션",
         series: [
           {
-            title: "SCREEN (acrylic, wood)",
+            title: "SCREEN",
             description: "견고한 파티션"
           },
           {
-            title: "SCREEN, PARTITION (felt, fabric)",
+            title: "30T 32T PARTITION",
             description: "세련된 파티션"
           },
           {
-            title: "PARTITION 45T Econo",
+            title: "45T PARTITION",
             description: "파도 모양 파티션"
           },
           {
-            title: "PARTITION 65T Aura",
+            title: "65T PARTITION",
             description: "지그재그 모양 파티션"
           },
           {
-            title: "PARTITION 66T Union",
+            title: "66T PARTITION",
             description: "지그재그 모양 파티션"
           }
         ]
@@ -102,10 +102,6 @@ module.exports = {
           {
             title: "LOCKER",
             description: "사물함"
-          },
-          {
-            title: "사물함",
-            description: "사물함"
           }
         ]
       },
@@ -114,19 +110,23 @@ module.exports = {
         description: "다양한 용도로 활용 가능한 다목적 테이블",
         series: [
           {
-            title: "CTR",
+            title: "CTR TABLE",
             description: "회의용 테이블"
           },
           {
-            title: "SR6",
+            title: "SR6 TABLE",
             description: "회의용 테이블"
           },
           {
-            title: "ER2",
+            title: "ER2 TABLE",
             description: "식당용 테이블"
           },
           {
-            title: "Combination / Kitchen",
+            title: "COMBINATION",
+            description: "교육용 테이블"
+          },
+          {
+            title: "KITCHEN",
             description: "교육용 테이블"
           },
           {
