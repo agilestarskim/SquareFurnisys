@@ -62,7 +62,7 @@ export default function Product() {
 
                 <Row className="mb-4">
                   {product.series.map((series, idx) => (
-                    <Col xs={12} md={6} lg={4} key={idx} className="g-5">
+                    <Col xs={6} sm={6} md={6} lg={4} xl={3} key={idx} className="mt-3 mb-3">
                         <Link to={`${series.title}`} style={{ textDecoration: 'none' }}>
                             <CardView
                                 image={getImage(product.title, series.title)}   

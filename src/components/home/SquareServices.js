@@ -32,8 +32,13 @@ const SquareServices = () => {
   const services = data.site.siteMetadata.services;
   const images = data.allFile.edges;
 
-  const handleButtonClick = () => {
-    alert("Button clicked!");
+  const handleButtonClick = (serviceTitle) => {
+    if (serviceTitle === "Catalog") {
+      const newWindow = window.open("/catalog.pdf", "_blank");
+      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+        alert("팝업이 차단되었습니다. 팝업 차단을 해제하고 다시 시도해주세요.");
+      }
+    }
   };
 
   return (
@@ -52,7 +57,7 @@ const SquareServices = () => {
                   title={service.title}
                   description={service.description}
                   buttonText= {service.buttonText}
-                  onButtonClick={handleButtonClick}
+                  onButtonClick={handleButtonClick(service.title)}
                 />
             </Col>
           );
