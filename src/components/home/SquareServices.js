@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, navigate } from "gatsby";
 import CardButtonView from "../common/CardButtonView"; // CardButtonView 컴포넌트를 임포트합니다.
 import { Row, Col } from "react-bootstrap";
 
@@ -35,12 +35,11 @@ const SquareServices = () => {
   const handleButtonClick = (serviceTitle) => {
     if (serviceTitle === "Catalog") {
       if (typeof window !== "undefined") {
-        const newWindow = window.open("/catalog.pdf", "_blank");
-        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-          alert("팝업이 차단되었습니다. 팝업 차단을 해제하고 다시 시도해주세요.");
-        }
-      }
-    }
+        window.open("catalog.pdf", "_blank");
+      } 
+    } else if (serviceTitle === "Showroom") {
+      navigate("/Showroom");
+    }    
   };
 
   return (
@@ -59,7 +58,7 @@ const SquareServices = () => {
                   title={service.title}
                   description={service.description}
                   buttonText= {service.buttonText}
-                  onButtonClick={handleButtonClick(service.title)}
+                  onButtonClick={() => handleButtonClick(service.title)}
                 />
             </Col>
           );
