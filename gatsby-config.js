@@ -140,20 +140,17 @@ module.exports = {
       {
         image: "catalog.png",
         title: "Catalog",
-        description: "스퀘어 퍼니시스의 제품 카탈로그를 확인하세요",
-        buttonText: "다운로드"
+        description: "스퀘어 퍼니시스의 제품 카탈로그를 확인하세요"
       },
       {
         image: "showroom.png",
         title: "Showroom",
-        description: "스퀘어 퍼니시스의 가구를 3D로 만나보세요",
-        buttonText: "구경하기"
+        description: "스퀘어 퍼니시스의 가구를 3D로 만나보세요"
       },
       {
         image: "portfolio.png",
         title: "Portfolio",
-        description: "스퀘어 퍼니시스의 프로젝트 사례를 살펴보세요",
-        buttonText: "구경하기"
+        description: "스퀘어 퍼니시스의 프로젝트 사례를 살펴보세요"
       }
     ]
   },

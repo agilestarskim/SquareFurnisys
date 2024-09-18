@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery, navigate } from "gatsby";
-import CardButtonView from "../common/CardButtonView"; // CardButtonView 컴포넌트를 임포트합니다.
+import CardView from "../common/CardView"; // CardButtonView 컴포넌트를 임포트합니다.
 import { Row, Col } from "react-bootstrap";
 
 const SquareServices = () => {
@@ -12,7 +12,6 @@ const SquareServices = () => {
                     title
                     description
                     image
-                    buttonText
                 }
             }
         }
@@ -38,7 +37,7 @@ const SquareServices = () => {
         window.open("catalog.pdf", "_blank");
       } 
     } else if (serviceTitle === "Showroom") {
-      navigate("/Showroom");
+      navigate("/showroom");
     }    
   };
 
@@ -52,14 +51,14 @@ const SquareServices = () => {
           const imageNode = images.find(image => image.node.relativePath.includes(service.image));
 
           return (
-            <Col xs={12} md={6} lg={4} className="mb-4" key={index}>              
-                <CardButtonView                  
+            <Col xs={12} md={6} lg={4} className="mb-4" key={index}>
+              <div onClick={() => handleButtonClick(service.title)}>
+                <CardView                  
                   image={imageNode ? imageNode.node.childImageSharp.gatsbyImageData : null}
                   title={service.title}
                   description={service.description}
-                  buttonText= {service.buttonText}
-                  onButtonClick={() => handleButtonClick(service.title)}
                 />
+              </div>
             </Col>
           );
         })}
