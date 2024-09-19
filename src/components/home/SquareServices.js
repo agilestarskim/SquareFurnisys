@@ -37,7 +37,7 @@ const SquareServices = () => {
         window.open("catalog.pdf", "_blank");
       } 
     } else if (serviceTitle === "Showroom") {
-      navigate("/showroom");
+      navigate("showroom");
     }    
   };
 

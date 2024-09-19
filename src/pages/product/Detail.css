@@ -1,11 +1,24 @@
 .series-detail-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .series-detail-description {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
   color:gray
+}
+
+.series-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.top-bottom-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover; /* 이미지가 컨테이너에 맞게 조정되도록 설정 */
+  border-radius: 12px;
 }

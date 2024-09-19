@@ -19,19 +19,19 @@ module.exports = {
         series: [
           {
             title: "EXPAND",
-            description: "확장 가능한 워크스테이션"
+            description: "효율적이고 확장 가능한 워크스테이션"
           },
           {
             title: "SPACE",
-            description: "공간 절약형 워크스테이션"
+            description: "자유로운 배치와 다양한 확장규격이 가능한 워크스테이션"
           },
           {
             title: "NUEVO",
-            description: "새로운 디자인의 워크스테이션"
+            description: "이동과 확장 배치가 자유로운 워크스테이션"
           },
           {
             title: "CUBE",
-            description: "큐브 형태의 워크스테이션"
+            description: "가장 효율적인 공간활용과 효과적인 작업공간"
           }
         ]
       },
@@ -138,7 +138,7 @@ module.exports = {
     ],
     services: [
       {
-        image: "catalog.png",
+        image: "catalog.webp",
         title: "Catalog",
         description: "스퀘어 퍼니시스의 제품 카탈로그를 확인하세요"
       },

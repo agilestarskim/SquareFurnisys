@@ -55,12 +55,11 @@ export default function Product() {
     <Layout>
       <Container>
         <Row>
-          <Col className="mt-4">
+          <Col className="mt-5">
             {products.map((product, index) => (
               <div key={index} id={product.title}>
                 {renderTitle(product.title)}
-
-                <Row className="mb-4">
+                <Row className="mb-5">
                   {product.series.map((series, idx) => (
                     <Col xs={6} sm={6} md={6} lg={4} xl={3} key={idx} className="mt-3 mb-3">
                         <Link to={`${series.title}`} style={{ textDecoration: 'none' }}>
@@ -72,7 +71,7 @@ export default function Product() {
                         </Link>
                     </Col>
                 ))}
-              </Row>  
+                </Row>  
               </div>
             ))}
           </Col>

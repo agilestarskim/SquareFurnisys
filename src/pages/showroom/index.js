@@ -3,17 +3,27 @@ import { Link } from "gatsby";
 import Layout from "../../components/common/Layout"
 import { Container, Row, Col } from 'react-bootstrap'
 import CardView from "../../components/common/CardView";
+import "./index.css";
 
 const Showroom = () => {
   const seriesList = ["Expand", "Nuevo", "Space", "Bistro", "Grade 1", "Topline"];
+
+  const renderTitle = (title) => {
+    return (
+      <h1 style={{fontWeight:"bold"}}>
+        <span className="blue-letter">{title.charAt(0)}</span>
+        {title.slice(1)}
+      </h1>
+    );
+  };
 
   return (
     <Layout>
       <Container>
       <Row className="mt-5">
           <Col>
-            <h1>Square Furnisys 쇼룸에 오신 것을 환영합니다.</h1>
-            <p>제품 시리즈를 선택 후 마우스를 이용해 모든 각도에서 제품을 감상하세요</p>
+            {renderTitle("Show Room")}                        
+            <h5>SquareFurnisys의 대표가구들을 3D로 만나보세요.</h5>
           </Col>
         </Row>
         <Row className="mt-5">

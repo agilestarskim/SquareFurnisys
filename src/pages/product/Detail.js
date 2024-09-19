@@ -11,19 +11,38 @@ const Detail = ({ data, pageContext }) => {
   const product = data.site.siteMetadata.products.find(product => product.title === productTitle);
   const series = product ? product.series.find(series => series.title === seriesTitle) : "Not Found";
 
-  const images = data.allFile.edges.sort((a, b) => {
+  const images = data.allFile.edges.filter(({ node }) => !node.name.includes('top') && !node.name.includes('bottom')).sort((a, b) => {
     const numA = parseInt(a.node.name.match(/\d+/), 10);
     const numB = parseInt(b.node.name.match(/\d+/), 10);
     return numA - numB;
   });
+
+  const topImages = data.allFile.edges.filter(({ node }) => node.name.includes('top'));
+  const bottomImages = data.allFile.edges.filter(({ node }) => node.name.includes('bottom'));
   
   return (
     <Layout>
       <Container>
         <Row>
-        <Col className="mt-4">
-        <h1 className="series-detail-title">{series.title}</h1>
-        <p className="series-detail-description">{series.description}</p>
+          <Col className="mt-4">
+          <h1 className="series-detail-title">{series.title}</h1>
+          <p className="series-detail-description">{series.description}</p>
+          </Col>
+        </Row>
+        {/* top 이미지 배치 */}
+        <Row className="mb-4">
+          {topImages.map(({ node }, index) => (
+            <Col md={12} lg={6} key={index} className="mt-5 mb-5">
+              <GatsbyImage
+                image={getImage(node.childImageSharp)}
+                alt={node.name}
+                className="top-bottom-image"
+              />
+            </Col>
+          ))}
+        </Row>
+        
+        {/* 기존 이미지 배치 */}
         <Row className="mb-4">
           {images.map(({ node }, index) => (
             <Col md={12} lg={4} key={index} className="mt-5 mb-5">
@@ -35,7 +54,17 @@ const Detail = ({ data, pageContext }) => {
             </Col>
           ))}
         </Row>
-          </Col>
+        {/* bottom 이미지 배치 */}
+        <Row className="mb-4">
+          {bottomImages.map(({ node }, index) => (
+            <Col md={12} lg={6} key={index} className="mt-5 mb-5">
+              <GatsbyImage
+                image={getImage(node.childImageSharp)}
+                alt={node.name}
+                className="top-bottom-image"
+              />
+            </Col>
+          ))}
         </Row>
       </Container>
     </Layout>

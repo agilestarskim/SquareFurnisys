@@ -18,7 +18,7 @@
 }
 .card-img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 11;
   border-radius: 12px;
   background-color: #d3d3d3; /* 투명 이미지 대비 배경색 회색 */
   object-fit: cover;
