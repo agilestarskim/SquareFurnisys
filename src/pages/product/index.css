@@ -1,6 +1,13 @@
-.blue-letter {
-    color: #214c98;
+.product-title {
+    font-size: 2rem;
     font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color:gray
 }
 
 .card-img-top {

@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery, navigate } from "gatsby";
 import CardView from "../common/CardView"; // CardButtonView 컴포넌트를 임포트합니다.
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 
 const SquareServices = () => {
   const data = useStaticQuery(graphql`
@@ -42,8 +42,8 @@ const SquareServices = () => {
   };
 
   return (
-    <div>
-      <Row className="g-4">
+    <Container>
+      <Row>
         <p className="text-center fs-1">
             SQUARE <span className="highlight">SERVICES</span>
         </p>
@@ -51,7 +51,7 @@ const SquareServices = () => {
           const imageNode = images.find(image => image.node.relativePath.includes(service.image));
 
           return (
-            <Col xs={12} md={6} lg={4} className="mb-4" key={index}>
+            <Col xs={12} md={6} lg={4} className="g-5" key={index}>
               <div onClick={() => handleButtonClick(service.title)}>
                 <CardView                  
                   image={imageNode ? imageNode.node.childImageSharp.gatsbyImageData : null}
@@ -63,7 +63,7 @@ const SquareServices = () => {
           );
         })}
       </Row>
-    </div>
+    </Container>
   );
 };
 

@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <Container fluid className="p-0">
       <Header/>
-      <div>{children}</div>
+        <div>{children}</div>
       <Footer/>
     </Container>
   )

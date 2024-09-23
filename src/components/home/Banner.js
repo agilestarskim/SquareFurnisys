@@ -8,21 +8,21 @@ import './Banner.css' // 추가된 CSS 파일 import
 
 export default function Banner() {
     return (
-        <Carousel>
+        <Carousel data-bs-theme="dark">
             <Carousel.Item>
-                <video className="d-block w-100 banner-video" autoPlay muted loop>
+                <video className="d-block w-100 banner-cover-img" autoPlay muted loop>
                     <source src={banner4} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </Carousel.Item>
             <Carousel.Item>
-                <img className="d-block w-100 banner-img" src={banner1} alt="First slide"/>
+                <img className="d-block w-100 banner-cover-img" src={banner1} alt="First slide"/>
             </Carousel.Item>
             <Carousel.Item>
-                <img className="d-block w-100 banner-img" src={banner2} alt="Second slide"/>
+                <img className="d-block w-100 banner-contain-img" src={banner2} alt="Second slide"/>
             </Carousel.Item>
             <Carousel.Item>
-                <img className="d-block w-100 banner-img" src={banner3} alt="Second slide"/>
+                <img className="d-block w-100 banner-contain-img" src={banner3} alt="Second slide"/>
             </Carousel.Item>            
         </Carousel>
     )

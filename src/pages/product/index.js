@@ -12,6 +12,7 @@ export default function Product() {
         siteMetadata {
           products {
             title
+            description
             series {
               title
               description
@@ -42,26 +43,18 @@ export default function Product() {
     return imageNode ? imageNode.node.childImageSharp.gatsbyImageData : null;
   };
 
-  const renderTitle = (title) => {
-    return (
-      <h1>
-        <span className="blue-letter">{title.charAt(0)}</span>
-        {title.slice(1)}
-      </h1>
-    );
-  };
-
   return (
     <Layout>
-      <Container>
-        <Row>
-          <Col className="mt-5">
+      <Container fluid>
+        <Row className="m-2">
+          <Col>
             {products.map((product, index) => (
               <div key={index} id={product.title}>
-                {renderTitle(product.title)}
+                <h1 className="product-title">{product.title}</h1>
+                <p className="product-description">{product.description}</p>
                 <Row className="mb-5">
                   {product.series.map((series, idx) => (
-                    <Col xs={6} sm={6} md={6} lg={4} xl={3} key={idx} className="mt-3 mb-3">
+                    <Col xs={6} sm={6} md={4} lg={4} xl={2} key={idx}>
                         <Link to={`${series.title}`} style={{ textDecoration: 'none' }}>
                             <CardView
                                 image={getImage(product.title, series.title)}   

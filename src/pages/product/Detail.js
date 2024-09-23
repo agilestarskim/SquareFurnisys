@@ -22,17 +22,17 @@ const Detail = ({ data, pageContext }) => {
   
   return (
     <Layout>
-      <Container>
-        <Row>
-          <Col className="mt-4">
+      <Container fluid>
+        <Row className="m-2">
+          <Col>
           <h1 className="series-detail-title">{series.title}</h1>
           <p className="series-detail-description">{series.description}</p>
           </Col>
         </Row>
         {/* top 이미지 배치 */}
-        <Row className="mb-4">
+        <Row className="mx-2 my-5">
           {topImages.map(({ node }, index) => (
-            <Col md={12} lg={6} key={index} className="mt-5 mb-5">
+            <Col md={6} lg={4} key={index} className="mb-5">
               <GatsbyImage
                 image={getImage(node.childImageSharp)}
                 alt={node.name}
@@ -43,9 +43,9 @@ const Detail = ({ data, pageContext }) => {
         </Row>
         
         {/* 기존 이미지 배치 */}
-        <Row className="mb-4">
+        <Row className="mx-2 my-5">
           {images.map(({ node }, index) => (
-            <Col md={12} lg={4} key={index} className="mt-5 mb-5">
+            <Col md={4} lg={3} key={index} className="mb-5">
               <GatsbyImage
                 image={getImage(node.childImageSharp)}
                 alt={node.name}
@@ -55,9 +55,9 @@ const Detail = ({ data, pageContext }) => {
           ))}
         </Row>
         {/* bottom 이미지 배치 */}
-        <Row className="mb-4">
+        <Row className="mx-2 my-5">
           {bottomImages.map(({ node }, index) => (
-            <Col md={12} lg={6} key={index} className="mt-5 mb-5">
+            <Col md={4} lg={3} key={index} className="mb-5">
               <GatsbyImage
                 image={getImage(node.childImageSharp)}
                 alt={node.name}

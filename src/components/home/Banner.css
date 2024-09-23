@@ -1,17 +1,35 @@
-.banner-img {
-    width: 100%;
-    height: 60vh;
+.banner-cover-img {
+    height: 90vh;    
     object-fit: cover;
 }
 
-.banner-video {
-    width: 100%;
-    max-height: 60vh; /* 비디오의 최대 높이를 설정 */
-    object-fit: cover; /* 비디오의 크기를 조정하여 컨테이너에 맞춤 */
+.banner-contain-img {
+    height: 90vh;    
+    object-fit: contain;
 }
 
-.carousel,
-.carousel-item {
-    border-radius: 20px;
-    overflow: hidden; /* 둥근 모서리가 잘리도록 설정 */
+/* sm 사이즈(600px 이하)일 때 .custom-card:hover 스타일 비활성화 */
+@media (max-width: 600px) {
+    .banner-cover-img {
+        height: 20vh;    
+        object-fit: cover;
+    }
+    
+    .banner-contain-img {
+        height: 20vh;    
+        object-fit: contain;
+    }
+}
+
+/* sm 사이즈(600px 이하)일 때 .custom-card:hover 스타일 비활성화 */
+@media (max-width: 900px) {
+    .banner-cover-img {
+        height: 40vh;    
+        object-fit: cover;
+    }
+    
+    .banner-contain-img {
+        height: 40vh;    
+        object-fit: contain;
+    }
 }

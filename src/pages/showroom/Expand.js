@@ -44,11 +44,11 @@ function ShowroomExpand() {
 
   return (
     <Layout>
-        <Container>
+        <Container fluid>
             {models.map((model) => (
                 <React.Fragment key={model.name}>
                     <hr style={{ borderColor: 'gray', borderWidth: '2px', margin: '3rem 0' }} />
-                    <Row className="mb-4 align-items-center">                        
+                    <Row className="m-5 justify-content-center">                        
                         <Col md={6} className="mb-5">
                             <h3>{model.name}</h3>
                             <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>

@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { getImage as getGatsbyImage } from "gatsby-plugin-image";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import CardView from "../common/CardView";
 
 
@@ -49,16 +49,16 @@ const Products = () => {
     };
 
     return (
-        <div>
+        <Container fluid>
             <Row className="justify-content-center">
                 <Col xs={12} className="mb-4">
                     <h1 className="text-center">Products</h1>
                     <h4 className="text-center text-muted">제품정보</h4>
                 </Col>
             </Row>
-            <Row className="mb-4">
+            <Row className="mb-4 justify-content-center" >
                 {products.map((product, idx) => (
-                    <Col xs={12} md={6} lg={4} key={idx} className="g-5 mb-5">
+                    <Col xs={6} md={4} lg={4} xl={2} key={idx} className="g-4 mb-5">
                         <Link 
                             to={`/product#${product.title}`}
                             style={{ textDecoration: 'none' }}
@@ -72,7 +72,7 @@ const Products = () => {
                     </Col>
                 ))}
             </Row>
-        </div>
+        </Container>
     );
 }
 

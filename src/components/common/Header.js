@@ -8,8 +8,7 @@ export default function Header() {
   const navLinkStyle = { fontSize: '18px', fontWeight: 'bold' };
 
   return (
-    <Navbar expand="lg" className="h-10" style={{minHeight: '100px'}}>
-      <Container>
+    <Navbar expand="lg" className="h-10" style={{minHeight: '100px'}}>      
         <Link to="/">
           <Image src={logo} fluid width="250px" />
         </Link>
@@ -22,8 +21,7 @@ export default function Header() {
             <Link to="/Customer" className="nav-link" style={navLinkStyle}>고객지원</Link>
             <Link to="/About" className="nav-link" style={navLinkStyle}>회사소개</Link>
           </Nav>
-        </Navbar.Collapse>
-      </Container>
+        </Navbar.Collapse>      
     </Navbar>
   );
 }

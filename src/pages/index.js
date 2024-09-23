@@ -13,12 +13,12 @@ export default function Home() {
 
   return (
       <Layout>
-          <Container>
-            <div style={sectionStyle}><Banner/></div>
-            <div style={sectionStyle}><Products/></div>
-            <div style={sectionStyle}><DesignConsulting/></div>
-            <div style={sectionStyle}><SquareServices/></div>
-          </Container>
+        {/* <Container fluid>          */}
+          <div style={sectionStyle}><Banner/></div>
+          <div style={sectionStyle}><Products/></div>
+          <div style={sectionStyle}><DesignConsulting/></div>
+          <div style={sectionStyle}><SquareServices/></div>
+        {/* </Container> */}
       </Layout>
   )
 }
