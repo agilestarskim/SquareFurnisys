@@ -1,4 +1,9 @@
 /* 기본 스타일 */
+
+.header-background {
+    background-color: white;
+}
+
 .nav-style {
     width: 100%;
     justify-content: space-between;

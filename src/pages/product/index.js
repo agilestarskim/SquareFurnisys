@@ -45,16 +45,16 @@ export default function Product() {
 
   return (
     <Layout>
-      <Container fluid>
-        <Row className="m-2">
+      <Container fluid className="p-0">
+        <Row className="my-2" >
           <Col>
             {products.map((product, index) => (
-              <div key={index} id={product.title}>
+              <div key={index} id={product.title} className="product-container p-4">
                 <h1 className="product-title">{product.title}</h1>
                 <p className="product-description">{product.description}</p>
-                <Row className="mb-5">
+                <Row>
                   {product.series.map((series, idx) => (
-                    <Col xs={6} sm={6} md={4} lg={4} xl={2} key={idx}>
+                    <Col xs={12} sm={6} md={4} lg={4} xl={3} key={idx} className="g-5">
                         <Link to={`${series.title}`} style={{ textDecoration: 'none' }}>
                             <CardView
                                 image={getImage(product.title, series.title)}   

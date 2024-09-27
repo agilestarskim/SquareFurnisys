@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Container } from 'react-bootstrap'
 import Layout from "../components/common/Layout"
 import Banner from "../components/home/Banner"
 import Products from "../components/home/Products"
@@ -12,13 +11,11 @@ export default function Home() {
   };
 
   return (
-      <Layout>
-        {/* <Container fluid>          */}
+      <Layout>        
           <div style={sectionStyle}><Banner/></div>
           <div style={sectionStyle}><Products/></div>
           <div style={sectionStyle}><DesignConsulting/></div>
-          <div style={sectionStyle}><SquareServices/></div>
-        {/* </Container> */}
+          <div style={sectionStyle}><SquareServices/></div>        
       </Layout>
   )
 }

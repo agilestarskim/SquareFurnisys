@@ -1,11 +1,21 @@
+/* 짝수 인덱스 요소의 배경색 설정 */
+.product-container:nth-child(even) {
+    background-color: #eeece5;
+}
+
+.product-container > * {
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
 .product-title {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 3rem;
+    font-weight: 900;
     margin-bottom: 1rem;
 }
 
 .product-description {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color:gray
 }

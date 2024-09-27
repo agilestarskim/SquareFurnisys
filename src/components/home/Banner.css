@@ -1,35 +1,84 @@
-.banner-cover-img {
-    height: 90vh;    
-    object-fit: cover;
+.banner-overlay {
+    position: relative;
 }
 
-.banner-contain-img {
-    height: 90vh;    
-    object-fit: contain;
+.banner-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 어두운 오버레이 */
 }
 
-/* sm 사이즈(600px 이하)일 때 .custom-card:hover 스타일 비활성화 */
-@media (max-width: 600px) {
-    .banner-cover-img {
-        height: 20vh;    
-        object-fit: cover;
-    }
-    
-    .banner-contain-img {
-        height: 20vh;    
-        object-fit: contain;
+.banner-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 5rem; /* 큰 글씨 크기 */
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    opacity: 0; /* 초기 상태에서 투명하게 설정 */
+    animation: fadeIn 2s forwards; /* 페이드 인 애니메이션 추가 */
+}
+
+.banner-subtext {
+    font-size: 2rem; /* 작은 글씨 크기 */
+    font-weight: normal;
+    margin-top: 1.5rem; /* 위 텍스트와의 간격 */
+    opacity: 0; /* 초기 상태에서 투명하게 설정 */
+    animation: fadeIn 2s forwards 0.5s; /* 페이드 인 애니메이션 추가, 0.5초 지연 */
+}
+
+/* 페이드 인 애니메이션 정의 */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }
 
-/* sm 사이즈(600px 이하)일 때 .custom-card:hover 스타일 비활성화 */
-@media (max-width: 900px) {
-    .banner-cover-img {
-        height: 40vh;    
-        object-fit: cover;
+/* md 사이즈일 때 텍스트 크기 조정 */
+@media (max-width: 1200px) {
+    .banner-text {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem; /* 중간 글씨 크기 */
     }
-    
-    .banner-contain-img {
-        height: 40vh;    
-        object-fit: contain;
+
+    .banner-subtext {
+        font-size: 1.5rem; /* 중간 작은 글씨 크기 */
+    }
+}
+
+/* md 사이즈일 때 텍스트 크기 조정 */
+@media (max-width: 768px) {
+    .banner-text {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem; /* 중간 글씨 크기 */
+    }
+
+    .banner-subtext {
+        font-size: 1.5rem; /* 중간 작은 글씨 크기 */
+    }
+}
+
+/* sm 사이즈일 때 텍스트 크기 조정 */
+@media (max-width: 576px) {
+    .banner-text {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem; /* 작은 글씨 크기 */
+    }
+
+    .banner-subtext {
+        font-size: 1rem; /* 작은 작은 글씨 크기 */
     }
 }

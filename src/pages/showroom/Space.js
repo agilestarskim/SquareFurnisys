@@ -35,38 +35,39 @@ function Model({ path, size }) {
 
 function ShowroomSpace() {
   const models = [
-    { name: 'space layout A', size: 'medium' },
-    { name: 'space layout B', size: 'medium' },
-    { name: 'space layout C', size: 'large' },
-    { name: 'space layout D', size: 'large' },
-    { name: 'space layout E', size: 'large' },
-    { name: 'space layout F', size: 'small' }
+    { name: 'Space layout A', size: 'small' },
+    { name: 'Space layout B', size: 'small' },
+    { name: 'Space layout C', size: 'medium' },
+    { name: 'Space layout D', size: 'large' },
+    { name: 'Space layout E', size: 'large' },
+    { name: 'Space layout F', size: 'small' }
   ];
 
   return (
     <Layout>
-        <Container>
-            {models.map((model) => (
-                <React.Fragment key={model.name}>
-                    <hr style={{ borderColor: 'gray', borderWidth: '2px', margin: '3rem 0' }} />
-                    <Row className="mb-4 align-items-center">                        
-                        <Col md={6} className="mb-5">
-                            <h3>{model.name}</h3>
-                            <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>
-                                <ambientLight intensity={0.5} />
-                                <directionalLight position={[0, 10, 5]} intensity={1} />
-                                <pointLight position={[10, 10, 10]} intensity={1} />
-                                <Model path={`/models/space/${model.name}.gltf`} size={model.size} />
-                                <OrbitControls target={[0, 0, 0]} enableZoom={false} />
-                            </Canvas>                            
-                        </Col>  
-                        <Col md={6}>
-                          <img src={`/models/space/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
-                        </Col>                      
-                    </Row>                    
-                </React.Fragment>
-            ))}
-        </Container>
+      <Container fluid className="p-0">
+        {models.map((model) => (
+          <React.Fragment key={model.name}>                    
+            <Row className="model-container">
+              <Col xl={12}>
+                <h1 className="model-title">{model.name}</h1>
+              </Col>                        
+              <Col md={6} className="mb-5">                            
+                  <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>
+                      <ambientLight intensity={0.5} />
+                      <directionalLight position={[0, 10, 5]} intensity={1} />
+                      <pointLight position={[10, 10, 10]} intensity={1} />
+                      <Model path={`/models/space/${model.name}.gltf`} size={model.size} />
+                      <OrbitControls target={[0, 0, 0]} enableZoom={false} />
+                  </Canvas>                            
+              </Col>  
+              <Col md={6}>
+                <img src={`/models/space/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
+              </Col>                      
+            </Row>                    
+          </React.Fragment>
+        ))}
+      </Container>
     </Layout>
   )
 }

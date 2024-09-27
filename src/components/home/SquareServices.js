@@ -32,21 +32,20 @@ const SquareServices = () => {
   const images = data.allFile.edges;
 
   const handleButtonClick = (serviceTitle) => {
-    if (serviceTitle === "Catalog") {
+    if (serviceTitle === "CATALOG") {
       if (typeof window !== "undefined") {
         window.open("catalog.pdf", "_blank");
       } 
-    } else if (serviceTitle === "Showroom") {
+    } else if (serviceTitle === "SHOW ROOM") {
       navigate("showroom");
     }    
   };
 
   return (
     <Container>
-      <Row>
-        <p className="text-center fs-1">
-            SQUARE <span className="highlight">SERVICES</span>
-        </p>
+      <Row>        
+        <h1 className="text-center">SQUARE SERVICES</h1>
+                       
         {services.map((service, index) => {
           const imageNode = images.find(image => image.node.relativePath.includes(service.image));
 

@@ -139,17 +139,17 @@ module.exports = {
     services: [
       {
         image: "catalog.webp",
-        title: "Catalog",
+        title: "CATALOG",
         description: "스퀘어 퍼니시스의 제품 카탈로그를 확인하세요"
       },
       {
-        image: "showroom.png",
-        title: "Showroom",
+        image: "showroom.webp",
+        title: "SHOW ROOM",
         description: "스퀘어 퍼니시스의 가구를 3D로 만나보세요"
       },
       {
-        image: "portfolio.png",
-        title: "Portfolio",
+        image: "portfolio.webp",
+        title: "PORTFOLIO",
         description: "스퀘어 퍼니시스의 프로젝트 사례를 살펴보세요"
       }
     ]

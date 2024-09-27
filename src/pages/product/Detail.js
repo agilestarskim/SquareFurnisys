@@ -23,27 +23,30 @@ const Detail = ({ data, pageContext }) => {
   return (
     <Layout>
       <Container fluid>
-        <Row className="m-2">
+        <Row className="items-background">
           <Col>
           <h1 className="series-detail-title">{series.title}</h1>
           <p className="series-detail-description">{series.description}</p>
           </Col>
         </Row>
+
         {/* top 이미지 배치 */}
-        <Row className="mx-2 my-5">
-          {topImages.map(({ node }, index) => (
-            <Col md={6} lg={4} key={index} className="mb-5">
-              <GatsbyImage
-                image={getImage(node.childImageSharp)}
-                alt={node.name}
-                className="top-bottom-image"
-              />
-            </Col>
-          ))}
-        </Row>
+        {topImages.length > 0 && (
+          <Row className="items-background">
+            {topImages.map(({ node }, index) => (
+              <Col lg={6} key={index} className="mb-5">
+                <GatsbyImage
+                  image={getImage(node.childImageSharp)}
+                  alt={node.name}
+                  className="top-bottom-image"
+                />
+              </Col>
+            ))}
+          </Row>
+        )}
         
         {/* 기존 이미지 배치 */}
-        <Row className="mx-2 my-5">
+        <Row className="items-background">
           {images.map(({ node }, index) => (
             <Col md={4} lg={3} key={index} className="mb-5">
               <GatsbyImage
@@ -54,18 +57,21 @@ const Detail = ({ data, pageContext }) => {
             </Col>
           ))}
         </Row>
+
         {/* bottom 이미지 배치 */}
-        <Row className="mx-2 my-5">
-          {bottomImages.map(({ node }, index) => (
-            <Col md={4} lg={3} key={index} className="mb-5">
-              <GatsbyImage
-                image={getImage(node.childImageSharp)}
-                alt={node.name}
-                className="top-bottom-image"
-              />
-            </Col>
-          ))}
-        </Row>
+        {bottomImages.length > 0 && (
+          <Row className="items-background">
+            {bottomImages.map(({ node }, index) => (
+              <Col lg={6} key={index} className="mb-5">
+                <GatsbyImage
+                  image={getImage(node.childImageSharp)}
+                  alt={node.name}
+                  className="top-bottom-image"
+                />
+              </Col>
+            ))}
+          </Row>
+        )}
       </Container>
     </Layout>
   );
