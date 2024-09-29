@@ -19,7 +19,7 @@ export default function Header() {
               <Link to="/product" className="nav-link" style={navLinkStyle}>제품정보</Link>
               <Link to="/Design" className="nav-link" style={navLinkStyle}>디자인</Link>
               <Link to="/Portfolio" className="nav-link" style={navLinkStyle}>납품실적</Link>
-              <Link to="/Customer" className="nav-link" style={navLinkStyle}>고객지원</Link>
+              <Link to="/#square-services" className="nav-link" style={navLinkStyle}>고객지원</Link>
               <Link to="/About" className="nav-link" style={navLinkStyle}>회사소개</Link>
             </Nav>
           </Navbar.Collapse>      

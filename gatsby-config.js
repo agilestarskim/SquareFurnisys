@@ -175,6 +175,13 @@ module.exports = {
         path: `${__dirname}/src/pages/product`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `designImages`,
+        path: `${__dirname}/src/images/Design`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,

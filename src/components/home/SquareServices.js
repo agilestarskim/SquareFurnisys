@@ -44,7 +44,7 @@ const SquareServices = () => {
   return (
     <Container>
       <Row>        
-        <h1 className="text-center">SQUARE SERVICES</h1>
+        <h1 id="square-services" className="text-center">SQUARE SERVICES</h1>
                        
         {services.map((service, index) => {
           const imageNode = images.find(image => image.node.relativePath.includes(service.image));
