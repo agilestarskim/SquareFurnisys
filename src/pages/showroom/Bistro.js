@@ -35,31 +35,32 @@ function Model({ path, size }) {
 
 function ShowroomBistro() {
   const models = [
-    { name: 'bistro layout A', size: 'medium' },
-    { name: 'bistro layout B', size: 'small' },
-    { name: 'bistro layout C', size: 'large' }
+    { name: 'Bistro layout A', size: 'medium' },
+    { name: 'Bistro layout B', size: 'small' },
+    { name: 'Bistro layout C', size: 'large' }
   ];
 
   return (
     <Layout>
-        <Container>
+        <Container fluid className="p-0">
             {models.map((model) => (
                 <React.Fragment key={model.name}>
-                    <hr style={{ borderColor: 'gray', borderWidth: '2px', margin: '3rem 0' }} />
-                    <Row className="mb-4 align-items-center">                        
-                        <Col md={6} className="mb-5">
-                            <h3>{model.name}</h3>
-                            <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>
-                                <ambientLight intensity={0.5} />
-                                <directionalLight position={[0, 10, 5]} intensity={1} />
-                                <pointLight position={[10, 10, 10]} intensity={1} />
-                                <Model path={`/models/bistro/${model.name}.gltf`} size={model.size} />
-                                <OrbitControls target={[0, 0, 0]} enableZoom={false} />
-                            </Canvas>                            
-                        </Col>  
-                        <Col md={6}>
-                          <img src={`/models/bistro/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
-                        </Col>                      
+                  <Row className="model-container">
+                      <Col xl={12}>
+                        <h1 className="model-title">{model.name}</h1>
+                      </Col>                                            
+                      <Col md={6} className="mb-5">                          
+                        <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>
+                            <ambientLight intensity={1} />
+                            <directionalLight position={[0, 10, 5]} intensity={3} />
+                            <pointLight position={[10, 10, 10]} intensity={3} />
+                            <Model path={`/models/Bistro/${model.name}.gltf`} size={model.size} />
+                            <OrbitControls target={[0, 0, 0]} enableZoom={false} />
+                        </Canvas>                            
+                      </Col>  
+                      <Col md={6}>
+                        <img src={`/models/Bistro/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
+                      </Col>                      
                     </Row>                    
                 </React.Fragment>
             ))}

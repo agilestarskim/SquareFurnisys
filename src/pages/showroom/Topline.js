@@ -54,12 +54,12 @@ function ShowroomTopline() {
                       <ambientLight intensity={0.5} />
                       <directionalLight position={[0, 10, 5]} intensity={1} />
                       <pointLight position={[10, 10, 10]} intensity={1} />
-                      <Model path={`/models/topline/${model.name}.gltf`} size={model.size} />
+                      <Model path={`/models/Topline/${model.name}.gltf`} size={model.size} />
                       <OrbitControls target={[0, 0, 0]} enableZoom={false} />
                   </Canvas>                            
               </Col>  
               <Col md={6}>
-                <img src={`/models/topline/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
+                <img src={`/models/Topline/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
               </Col>                      
             </Row>                    
           </React.Fragment>

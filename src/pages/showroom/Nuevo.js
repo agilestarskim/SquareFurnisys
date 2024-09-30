@@ -55,12 +55,12 @@ function ShowroomNuevo() {
                         <ambientLight intensity={0.5} />
                         <directionalLight position={[0, 10, 5]} intensity={1} />
                         <pointLight position={[10, 10, 10]} intensity={1} />
-                        <Model path={`/models/nuevo/${model.name}.gltf`} size={model.size} />
+                        <Model path={`/models/Nuevo/${model.name}.gltf`} size={model.size} />
                         <OrbitControls target={[0, 0, 0]} enableZoom={false} />
                     </Canvas>                            
                 </Col>  
                 <Col md={6}>
-                  <img src={`/models/nuevo/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
+                  <img src={`/models/Nuevo/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
                 </Col>                      
             </Row>                    
           </React.Fragment>

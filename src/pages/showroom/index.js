@@ -10,6 +10,7 @@ const Showroom = () => {
     { title: "Expand", description: "효율적이고 확장 가능한 워크스테이션" },
     { title: "Nuevo", description: "이동과 확장 배치가 자유로운 워크스테이션"},
     { title: "Space", description: "자유로운 배치와 다양한 확장규격이 가능한 워크스테이션" },
+    { title: "Bistro", description: "프리미엄 디자인의 임원용 책상" },
     { title: "Grade 1", description: "고급스러운 임원용 책상" },
     { title: "Topline", description: "최고급 임원용 책상" },
   ];

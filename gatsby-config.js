@@ -41,7 +41,7 @@ module.exports = {
         series: [
           {
             title: "BISTRO",
-            description: "프리미엄한 디자인의 임원용 책상"
+            description: "프리미엄 디자인의 임원용 책상"
           },
           {
             title: "GRADE 1",
@@ -180,6 +180,13 @@ module.exports = {
       options: {
         name: `designImages`,
         path: `${__dirname}/src/images/Design`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolio`,
+        path: `${__dirname}/src/images/Portfolio`,
       },
     },
     `gatsby-transformer-sharp`,

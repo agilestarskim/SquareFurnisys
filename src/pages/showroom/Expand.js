@@ -54,18 +54,18 @@ function ShowroomExpand() {
                       <Col xl={12}>
                         <h1 className="model-title">{model.name}</h1>
                       </Col>                      
-                        <Col md={6} className="mb-5">                            
-                            <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>
-                                <ambientLight intensity={0.5} />
-                                <directionalLight position={[0, 10, 5]} intensity={1} />
-                                <pointLight position={[10, 10, 10]} intensity={1} />
-                                <Model path={`/models/expand/${model.name}.gltf`} size={model.size} />
-                                <OrbitControls target={[0, 0, 0]} enableZoom={false} />
-                            </Canvas>                            
-                        </Col>  
-                        <Col md={6}>
-                          <img src={`/models/expand/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
-                        </Col>                      
+                      <Col md={6} className="mb-5">                            
+                        <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>
+                          <ambientLight intensity={0.5} />
+                          <directionalLight position={[0, 10, 5]} intensity={1} />
+                          <pointLight position={[10, 10, 10]} intensity={1} />
+                          <Model path={`/models/Expand/${model.name}.gltf`} size={model.size} />
+                          <OrbitControls target={[0, 0, 0]} enableZoom={false} />
+                        </Canvas>                            
+                      </Col>  
+                      <Col md={6}>
+                        <img src={`/models/Expand/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
+                      </Col>                      
                     </Row>                    
                 </React.Fragment>
             ))}
