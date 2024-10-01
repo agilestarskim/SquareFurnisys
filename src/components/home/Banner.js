@@ -16,7 +16,7 @@ export default function Banner() {
                         placeholder="blurred"
                     />                    
                     <div className="banner-text w-100">
-                        SQURE FURNISYS
+                        SQUARE FURNISYS
                         <div className="banner-subtext">"일하는 공간, 더 나은 내일을 위한 선택"</div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ export default function Banner() {
                         placeholder="blurred"
                     />                    
                     <div className="banner-text w-100">
-                        SQURE FURNISYS
+                        SQUARE FURNISYS
                         <div className="banner-subtext">"오피스에 스타일과 편안함을 더하다."</div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ export default function Banner() {
                         placeholder="blurred"
                     />                    
                     <div className="banner-text w-100">
-                        SQURE FURNISYS
+                        SQUARE FURNISYS
                         <div className="banner-subtext">"편안함과 효율성을 더한 오피스 가구 솔루션"</div>
                     </div>
                 </div>

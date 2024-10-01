@@ -97,3 +97,10 @@ export default function Design({ data }) {
     </Layout>
   );
 }
+
+export const Head = () => (
+  <>
+    <title>스퀘어 퍼니시스 - 디자인</title>
+    <meta name="description" content="디자인" />
+  </>
+)

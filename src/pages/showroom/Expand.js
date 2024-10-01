@@ -75,3 +75,10 @@ function ShowroomExpand() {
 }
 
 export default ShowroomExpand;
+
+export const Head = () => (
+  <>
+    <title>스퀘어 퍼니시스 - Showroom</title>
+    <meta name="description" content="Expand" />
+  </>
+)

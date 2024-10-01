@@ -71,3 +71,10 @@ function ShowroomNuevo() {
 }
 
 export default ShowroomNuevo;
+
+export const Head = () => (
+  <>
+    <title>스퀘어 퍼니시스 - Showroom</title>
+    <meta name="description" content="Nuevo" />
+  </>
+)

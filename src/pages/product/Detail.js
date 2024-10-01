@@ -110,3 +110,10 @@ export const query = graphql`
 `;
 
 export default Detail;
+
+export const Head = () => (
+  <>
+    <title>스퀘어 퍼니시스 - 제품정보</title>
+    <meta name="description" content="제품정보" />
+  </>
+)

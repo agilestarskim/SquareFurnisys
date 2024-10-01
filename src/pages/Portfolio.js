@@ -71,3 +71,10 @@ export default function Portfolio({ data }) {
     </Layout>
   );
 }
+
+export const Head = () => (
+  <>
+    <title>스퀘어 퍼니시스 - 납품실적</title>
+    <meta name="description" content="납품실적" />
+  </>
+)

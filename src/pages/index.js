@@ -19,3 +19,10 @@ export default function Home() {
       </Layout>
   )
 }
+
+export const Head = () => (
+  <>
+    <title>스퀘어 퍼니시스</title>
+    <meta name="description" content="스퀘어 퍼니시스" />
+  </>
+)
