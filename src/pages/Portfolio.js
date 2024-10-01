@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/common/Layout";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import './Portfolio.css';
 
@@ -18,10 +18,9 @@ export const query = graphql`
           relativeDirectory
           name
           childImageSharp {
-            gatsbyImageData(
-              width: 2000,
-              quality: 90,
-              layout: CONSTRAINED,
+            gatsbyImageData(              
+              quality: 100,
+              layout: FULL_WIDTH,
               placeholder: BLURRED
             )
           }
@@ -30,6 +29,10 @@ export const query = graphql`
     }
   }
 `;
+
+const handleScrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
 export default function Portfolio({ data }) {
   // 폴더별로 이미지를 그룹화
@@ -54,20 +57,17 @@ export default function Portfolio({ data }) {
       <Container>
         {sortedFolders.map((folder, index) => (
           <div key={index} className="folder-container">
-            <h2>{folder}</h2>
-            <Row>
-              {groupedImages[folder].map((imageNode, idx) => {
-                const image = getImage(imageNode.childImageSharp.gatsbyImageData);
-                return (
-                  <Col key={idx} xs={12} className="image-col">
-                    <GatsbyImage image={image} alt={imageNode.name} className="portfolio-image" />
-                  </Col>
-                );
-              })}
-            </Row>
+            <h1 className="portfolio-title">{folder}</h1>            
+            {groupedImages[folder].map((imageNode, idx) => {
+              const image = getImage(imageNode.childImageSharp.gatsbyImageData);
+              return (
+                <GatsbyImage image={image} alt={imageNode.name} className="portfolio-image" />
+              );
+            })}            
           </div>
         ))}
       </Container>
+      <button className="scroll-to-top" onClick={handleScrollToTop}>▲</button>
     </Layout>
   );
 }

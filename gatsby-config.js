@@ -41,23 +41,23 @@ module.exports = {
         series: [
           {
             title: "BISTRO",
-            description: "프리미엄 디자인의 임원용 책상"
+            description: "다양한 공간에 잘 어울리는 중역 가구"
           },
           {
             title: "GRADE 1",
-            description: "고급스러운 임원용 책상"
+            description: "품격있고 실용적인 새로운 모듈식 임원 세트"
           },
           {
             title: "GRAVITY",
-            description: "고전적인 임원용 책상"
+            description: "일하는 중역을 위한 가장 실용적인 중역 시리즈"
           },
           {
             title: "DUKE",
-            description: "품격 있는 임원용 책상"
+            description: "기본에 충실한 베이직한 중역 듀크 시리즈"
           },
           {
             title: "TOPLINE",
-            description: "최고급 임원용 책상"
+            description: "심플함을 추구하는 전문가의 워크스테이션"
           }
         ]
       },
@@ -67,23 +67,23 @@ module.exports = {
         series: [
           {
             title: "SCREEN",
-            description: "견고한 파티션"
+            description: "아크릴, 우드 파티션"
           },
           {
             title: "30T 32T PARTITION",
-            description: "세련된 파티션"
+            description: "30mm 파티션"
           },
           {
             title: "45T PARTITION",
-            description: "파도 모양 파티션"
+            description: "45mm 파티션"
           },
           {
             title: "65T PARTITION",
-            description: "지그재그 모양 파티션"
+            description: "65mm 파티션"
           },
           {
             title: "66T PARTITION",
-            description: "지그재그 모양 파티션"
+            description: "66mm 파티션"
           }
         ]
       },
@@ -111,27 +111,27 @@ module.exports = {
         series: [
           {
             title: "CTR TABLE",
-            description: "회의용 테이블"
+            description: "단단한 고정력, 안정적인 테이블"
           },
           {
             title: "SR6 TABLE",
-            description: "회의용 테이블"
+            description: "견고한 하부 철재구조의 테이블"
           },
           {
             title: "ER2 TABLE",
-            description: "식당용 테이블"
+            description: "쇼규모 회의실에 적합한 테이블"
           },
           {
             title: "COMBINATION",
-            description: "교육용 테이블"
+            description: "자유로운 조합이 가능한 테이블"
           },
           {
             title: "KITCHEN",
-            description: "교육용 테이블"
+            description: "사각형 테이블"
           },
           {
             title: "FOLDING TABLE",
-            description: "접이식 테이블"
+            description: "교육장과 회의실을 위한 접이식 테이블"
           }
         ]
       }

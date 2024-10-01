@@ -42,6 +42,10 @@ export default function Design({ data }) {
     );
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // 폴더별로 이미지를 그룹화
   const groupedImages = data.allFile.edges.reduce((acc, { node }) => {
     const folder = node.relativeDirectory.split('/').pop();
@@ -87,8 +91,9 @@ export default function Design({ data }) {
               </Row>
             </div>
           </div>
-        ))}
-      </Container>
+        ))}                
+      </Container>      
+      <button className="scroll-to-top" onClick={handleScrollToTop}>▲</button>
     </Layout>
   );
 }

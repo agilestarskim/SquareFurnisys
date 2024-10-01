@@ -25,7 +25,7 @@ export default function Product() {
           node {
             relativePath
             childImageSharp {
-              gatsbyImageData(width: 300, placeholder: BLURRED)
+              gatsbyImageData(width: 300, quality: 100, placeholder: BLURRED)
             }
           }
         }
@@ -54,7 +54,7 @@ export default function Product() {
                 <p className="product-description">{product.description}</p>
                 <Row>
                   {product.series.map((series, idx) => (
-                    <Col xs={12} sm={6} md={4} lg={4} xl={3} key={idx} className="g-5">
+                    <Col xs={12} sm={6} md={4} lg={4} xl={3} key={idx} className="g-4">
                         <Link to={`${series.title}`} style={{ textDecoration: 'none' }}>
                             <CardView
                                 image={getImage(product.title, series.title)}   

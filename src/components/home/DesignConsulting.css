@@ -26,7 +26,7 @@
 }
 
 .learn-more-button {
-    background-color: #4A4947; /* 진한 파란색 배경 */
+    background-color: #4A4947;
     color: white; /* 흰색 글자 */
     border: none; /* 테두리 없음 */
     border-radius: 50px; /* 캡슐 모양 */
@@ -38,7 +38,7 @@
 }
 
 .learn-more-button:hover {
-    background-color: #41403e; /* 호버 시 더 진한 파란색 */
+    background-color: #41403e;
 }
 
 .consulting-custom-card {
@@ -58,11 +58,11 @@
 }
 
 .consulting-card-img {
-    max-width: 44px; /* 이미지의 최대 너비를 80%로 설정 */
+    max-width: 40px; /* 이미지의 최대 너비를 80%로 설정 */
 }
 
 .consulting-card-title {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
     font-weight: 600;
     margin-bottom: 12px;
     color: black; /* 글씨 색상 검은색 */
@@ -70,7 +70,7 @@
 }
 
 .consulting-card-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: gray; /* 글씨 색상 회색 */
     text-align: left; /* 좌측 정렬 */
     padding: 4px

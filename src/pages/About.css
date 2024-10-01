@@ -1,0 +1,73 @@
+.row-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    padding: 5rem;
+}
+
+.row-container:nth-child(even) {
+  background-color: #eeece5;
+}
+
+.about-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    font-family: sans-serif;      
+}
+
+.about-main-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    color: #42413f;
+}
+
+.about-description {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 2; /* 줄 간격을 1.5배로 설정 */
+}
+
+/* sm 사이즈일 때 텍스트 크기 조정 */
+@media (max-width: 576px) {
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+
+  .about-main-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;       
+}
+
+  .about-description {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      font-family: 'Noto Sans KR', sans-serif;
+      line-height: 1.8; /* 줄 간격을 1.5배로 설정 */
+  }
+
+  .row-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    padding: 1rem;
+  }
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 2rem;    
+}

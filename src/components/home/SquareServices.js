@@ -38,7 +38,9 @@ const SquareServices = () => {
       } 
     } else if (serviceTitle === "SHOW ROOM") {
       navigate("showroom");
-    }    
+    } else if (serviceTitle === "PORTFOLIO") {
+      navigate("Portfolio");
+    }
   };
 
   return (

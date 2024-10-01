@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three'; // THREE 라이브러리 임포트
 import Layout from "../../components/common/Layout"
 import { Container, Row, Col } from 'react-bootstrap'
@@ -7,7 +7,7 @@ import { OrbitControls, useGLTF } from '@react-three/drei';
 
 function Model({ path, size }) {
   const { scene } = useGLTF(path);
-  const ref = React.useRef();
+  const ref = useRef();
   var scale = 5;
 
   if (size === 'small') {
@@ -18,7 +18,7 @@ function Model({ path, size }) {
       scale = 5;
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     // 모델의 전체 바운딩 박스를 계산
     const box = new THREE.Box3().setFromObject(scene);
     const center = box.getCenter(new THREE.Vector3());
@@ -54,9 +54,9 @@ function ShowroomSpace() {
               </Col>                        
               <Col md={6} className="mb-5">                            
                   <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>
-                      <ambientLight intensity={0.5} />
-                      <directionalLight position={[0, 10, 5]} intensity={1} />
-                      <pointLight position={[10, 10, 10]} intensity={1} />
+                      <ambientLight intensity={1} />
+                      <directionalLight position={[0, 10, 5]} intensity={2} />
+                      <pointLight position={[10, 10, 10]} intensity={2} />
                       <Model path={`/models/Space/${model.name}.gltf`} size={model.size} />
                       <OrbitControls target={[0, 0, 0]} enableZoom={false} />
                   </Canvas>                            

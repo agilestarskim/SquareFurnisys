@@ -12,6 +12,12 @@
     background-color: rgba(0, 0, 0, 0.6); /* 어두운 오버레이 */
 }
 
+.banner-img {
+    width: 100%;
+    height: 100vh;
+}
+
+
 .banner-text {
     position: absolute;
     top: 40%;
@@ -53,6 +59,11 @@
     .banner-subtext {
         font-size: 1.5rem; /* 중간 작은 글씨 크기 */
     }
+
+    .banner-img {
+        width: 100%;
+        height: 80vh;
+    }
 }
 
 /* md 사이즈일 때 텍스트 크기 조정 */
@@ -67,6 +78,11 @@
     .banner-subtext {
         font-size: 1.5rem; /* 중간 작은 글씨 크기 */
     }
+
+    .banner-img {
+        width: 100%;
+        height: 50vh;
+    }
 }
 
 /* sm 사이즈일 때 텍스트 크기 조정 */
@@ -75,10 +91,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 2rem; /* 작은 글씨 크기 */
+        font-size: 2.2rem; /* 작은 글씨 크기 */
     }
 
     .banner-subtext {
-        font-size: 1rem; /* 작은 작은 글씨 크기 */
+        font-size: 1.2rem; /* 작은 작은 글씨 크기 */
     }
 }
