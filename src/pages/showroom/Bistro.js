@@ -42,31 +42,42 @@ function ShowroomBistro() {
 
   return (
     <Layout>
-        <Container fluid className="p-0">
-            {models.map((model) => (
-                <React.Fragment key={model.name}>
-                  <Row className="model-container">
-                      <Col xl={12}>
-                        <h1 className="model-title">{model.name}</h1>
-                      </Col>                                            
-                      <Col md={6} className="mb-5">                          
-                        <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>
-                            <ambientLight intensity={1} />
-                            <directionalLight position={[0, 10, 5]} intensity={3} />
-                            <pointLight position={[10, 10, 10]} intensity={3} />
-                            <Model path={`/models/Bistro/${model.name}.gltf`} size={model.size} />
-                            <OrbitControls target={[0, 0, 0]} enableZoom={false} />
-                        </Canvas>                            
-                      </Col>  
-                      <Col md={6}>
-                        <img src={`/models/Bistro/${model.name}.png`} alt={`${model} model`} style={{ width: '100%' }} />
-                      </Col>                      
-                    </Row>                    
-                </React.Fragment>
-            ))}
-        </Container>
+      <Container fluid>
+          {models.map((model) => (
+              <React.Fragment key={model.name}>
+                <Row className="model-container">
+                    <Col xl={12}>
+                      <h1 className="model-title">{model.name}</h1>
+                    </Col>                                            
+                    <Col md={12} xl={6} className="mb-5">                          
+                      <Canvas style={{ height: '800px' }} camera={{ position: [5, 10, 20] }}>
+                          <ambientLight intensity={1} />
+                          <directionalLight position={[0, 10, 5]} intensity={3} />
+                          <pointLight position={[10, 10, 10]} intensity={3} />
+                          <Model path={`/models/Bistro/${model.name}.gltf`} size={model.size} />
+                          <OrbitControls target={[0, 0, 0]} enableZoom={false} />
+                      </Canvas>                            
+                    </Col>  
+                    <Col md={12} xl={6} className="mb-5">
+                      <img 
+                        src={`/models/Bistro/${model.name}.png`} 
+                        alt={`${model} model`} 
+                        style={{ width: '100%' }} 
+                      />
+                    </Col>                      
+                  </Row>                    
+              </React.Fragment>
+          ))}
+      </Container>
     </Layout>
   )
 }
 
 export default ShowroomBistro;
+
+export const Head = () => (
+  <>
+    <title>스퀘어 퍼니시스 - Showroom</title>
+    <meta name="description" content="Bistro" />
+  </>
+)

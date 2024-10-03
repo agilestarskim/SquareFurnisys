@@ -1,7 +1,7 @@
 .item-container {
     margin: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
   }
   
@@ -17,7 +17,7 @@
     width: 100px;
     height: 100px;
     margin-right: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   
   .dropdown-content {
