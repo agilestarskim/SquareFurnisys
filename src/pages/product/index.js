@@ -45,30 +45,24 @@ export default function Product() {
 
   return (
     <Layout>
-      <Container fluid className="p-0">
-        <Row className="my-2" >
-          <Col>
-            {products.map((product, index) => (
-              <div key={index} id={product.title} className="product-container p-4">
-                <h1 className="product-title">{product.title}</h1>
-                <p className="product-description">{product.description}</p>
-                <Row>
-                  {product.series.map((series, idx) => (
-                    <Col xs={12} sm={6} md={4} lg={4} xl={3} key={idx} className="g-4">
-                        <Link to={`${series.title}`} style={{ textDecoration: 'none' }}>
-                            <CardView
-                                image={getImage(product.title, series.title)}   
-                                title={series.title}
-                                description={series.description}
-                            />
-                        </Link>
-                    </Col>
-                ))}
-                </Row>  
-              </div>
-            ))}
-          </Col>
-        </Row>
+      <Container fluid>        
+          {products.map((product, index) => (
+            <Row key={index} id={product.title} className="product-container p-3">
+              <h1 className="product-title">{product.title}</h1>
+              <p className="product-description">{product.description}</p>              
+                {product.series.map((series, idx) => (
+                  <Col xs={12} sm={6} md={4} lg={4} xl={3} key={idx} className="g-4">
+                      <Link to={`${series.title}`} style={{ textDecoration: 'none' }}>
+                          <CardView
+                              image={getImage(product.title, series.title)}   
+                              title={series.title}
+                              description={series.description}
+                          />
+                      </Link>
+                  </Col>
+              ))}
+            </Row>              
+          ))}          
       </Container>
     </Layout>
   );

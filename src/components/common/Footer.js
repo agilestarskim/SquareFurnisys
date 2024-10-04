@@ -36,11 +36,11 @@ export default function Footer() {
               <Col xs={12} md={6} lg={6} className="d-flex flex-column">
                 <div className="footer-item">
                   <strong className="footer-title">주소</strong> 
-                  <span className="footer-content">경기도 고양시 덕양구 향동로 201, GL메트로시티 향동 1102호</span>
+                  <span className="footer-content">경기도 고양시 덕양구 향동로 201, GL메트로시티 향동 1152호</span>
                 </div>
                 <div className="footer-item">
                   <strong className="footer-title">메일</strong>
-                  <span className="footer-content">sunkej@daum.net</span>
+                  <span className="footer-content">squarefurnisys@naver.com</span>
                 </div>
               </Col>
             </Row>

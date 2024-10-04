@@ -13,12 +13,6 @@
     color:gray
 }
 
-.model-container {
-    
-}
-
-
-
 .model-container:nth-child(even) {
     background-color: #eeece5;
 }

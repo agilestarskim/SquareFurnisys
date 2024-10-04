@@ -15,7 +15,7 @@ const DesignConsulting = () => {
 
     return (
         <Container fluid className="design-consulting-container p-3">            
-            <h1 className="text-center">SQUARE DESIGN CONSULTING</h1>
+            <h1 className="text-center mt-5">SQUARE DESIGN CONSULTING</h1>
             <h4 className="text-center text-muted">효율적인 오피스 공간을 위한 맞춤형 Planning Ideas 제공</h4>  
             <Container>         
                 <div onClick={handleNavigation} style={{ cursor: "pointer" }}>
