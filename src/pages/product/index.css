@@ -4,8 +4,8 @@
 }
 
 .product-container > * {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    padding-top: 3rem;    
+    padding-bottom: 3rem;
 }
 
 .product-title {
