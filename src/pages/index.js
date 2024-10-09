@@ -6,16 +6,17 @@ import DesignConsulting from "../components/home/DesignConsulting"
 import SquareServices from "../components/home/SquareServices"
 
 export default function Home() {
-  const sectionStyle = {
-    marginBottom: '15vh' // 수직 간격을 넉넉하게 설정
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
       <Layout>        
-          <div style={sectionStyle}><Banner/></div>
-          <div style={sectionStyle}><Products/></div>
-          <div style={sectionStyle}><DesignConsulting/></div>
-          <div style={sectionStyle}><SquareServices/></div>        
+          <Banner/>
+          <Products/>
+          <DesignConsulting/>
+          <SquareServices/>
+          <button className="scroll-to-top" onClick={handleScrollToTop}>▲</button>        
       </Layout>
   )
 }

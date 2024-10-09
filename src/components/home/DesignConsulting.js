@@ -14,10 +14,10 @@ const DesignConsulting = () => {
     };
 
     return (
-        <Container fluid className="design-consulting-container p-3">            
-            <h1 className="text-center mt-5">SQUARE DESIGN CONSULTING</h1>
+        <Container fluid className="design-consulting-container p-3" id="design-consulting">            
+            <h1 className="text-center menu-title">Square Design Consulting</h1>
             <h4 className="text-center text-muted">효율적인 오피스 공간을 위한 맞춤형 Planning Ideas 제공</h4>  
-            <Container>         
+            <Container className="my-5">         
                 <div onClick={handleNavigation} style={{ cursor: "pointer" }}>
                     <Row>
                         <Col xs={6} md={6} xl={6} className="g-0">
@@ -38,11 +38,10 @@ const DesignConsulting = () => {
                                 placeholder="blurred"
                             />
                         </Col>
-                    </Row>                    
-                                
+                    </Row>                                
                 </div>
             </Container>
-            <Container>
+            <Container className="my-5">
                 <Row>
                     <Col xs={6} md={4} xl={3}>
                         <DesignConsultingCard
@@ -74,7 +73,7 @@ const DesignConsulting = () => {
                     </Col>
                 </Row>  
             </Container>
-            <div className="text-center">
+            <div className="text-center my-5">
                 <button 
                 className="learn-more-button" 
                 onClick={handleNavigation}

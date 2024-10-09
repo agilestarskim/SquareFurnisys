@@ -1,6 +1,5 @@
-.header-background {  
-      
-    background-color: rgb(255, 255, 255); /* 배경색을 반투명하게 설정 */
+.header-background {        
+    background-color: rgb(255, 255, 255); 
     position: sticky; /* 스티키 헤더로 설정 */
     top: 0; /* 페이지 상단에 고정 */
     z-index: 1000; /* 다른 요소들 위에 표시되도록 z-index 설정 */

@@ -35,9 +35,9 @@ function Model({ path, size }) {
 
 function ShowroomTopline() {
   const models = [
-    { name: 'Topline layout A', size: 'small' },
-    { name: 'Topline layout B', size: 'small' },
-    { name: 'Topline layout C', size: 'large' }
+    { name: 'Grade 2 layout A', size: 'small' },
+    { name: 'Grade 2 layout B', size: 'small' },
+    { name: 'Grade 2 layout C', size: 'large' }
   ];
 
   return (
@@ -54,13 +54,13 @@ function ShowroomTopline() {
                       <ambientLight intensity={0.5} />
                       <directionalLight position={[0, 10, 5]} intensity={1} />
                       <pointLight position={[10, 10, 10]} intensity={1} />
-                      <Model path={`/models/Topline/${model.name}.gltf`} size={model.size} />
+                      <Model path={`/models/Grade 2/${model.name}.gltf`} size={model.size} />
                       <OrbitControls target={[0, 0, 0]} enableZoom={false} />
                   </Canvas>                            
               </Col>  
               <Col md={12} xl={6} className="mb-5">
                 <img 
-                  src={`/models/Topline/${model.name}.png`} 
+                  src={`/models/Grade 2/${model.name}.png`} 
                   alt={`${model} model`} 
                   style={{ width: '100%' }} 
                 />
@@ -78,6 +78,6 @@ export default ShowroomTopline;
 export const Head = () => (
   <>
     <title>스퀘어 퍼니시스 - Showroom</title>
-    <meta name="description" content="Topline" />
+    <meta name="description" content="Grade 2" />
   </>
 )

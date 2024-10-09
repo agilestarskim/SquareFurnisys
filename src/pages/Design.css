@@ -1,64 +1,91 @@
-.item-container {
-    margin: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .item-header {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px;
-    background-color: #f9f9f9;
-  }
-  
-  .item-image {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-    border-radius: 10px;
-  }
-  
-  .dropdown-content {
-    padding: 10px;
-    background-color: #fff;
-    display: none; /* 기본적으로 숨김 */
-  }
-  
-  .dropdown-content.show {
-    display: block; /* 활성화된 경우 표시 */
-  }
-
-  .related-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    object-fit: contain; /* 이미지가 잘리지 않도록 설정 */
-  }
-
-.scroll-to-top {
-  position: sticky;
-  bottom: 3rem; 
-  margin-bottom: 3rem;    
-  margin-left: auto; /* 우측 정렬 */
-  margin-right: 3rem;    
-  width: 50px;
-  height: 50px;
-  background-color: #4A4947;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 24px;
+.content-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s;
+  overflow: visible; /* 부모 요소의 overflow 속성을 visible로 설정 */
 }
 
-.scroll-to-top:hover {
-  background-color: #3e3d3c;
+.list-container {
+  flex: 1;
+  margin-top: 6rem;
+  position: sticky;
+  top: 10rem;
+  z-index: 900;
+  height: fit-content; /* 높이를 내용에 맞게 조정 */
+}
+
+.list-container > * {
+  margin-bottom: 0.6rem; /* 모든 자식 요소에 아래쪽 간격 추가 */
+  height: 1.6rem;
+}
+
+.picture-container {
+  flex: 3; /* 너비 비율 3 */
+}
+
+.carousel-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);  
+}
+
+.banner-image {
+  background-color: white;
+}
+
+.company-title {
+  font-size: 2rem;
+  font-weight: bold;  
+}
+
+.company-container:first-child {
+  padding-top: 6rem; /* 첫 번째 요소에만 margin-top 적용 */
+}
+.company-container:not(:first-child) {
+  padding-top: 10rem;
+}
+
+.thumbnail-container {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+
+.thumbnail-wrapper {
+  margin-right: 10px; /* 모든 썸네일에 오른쪽 간격 추가 */
+}
+
+.thumbnail-wrapper:last-child {
+  margin-right: 0; /* 마지막 썸네일의 오른쪽 간격 제거 */
+}
+
+.thumbnail-img {
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: white;
+}
+
+.thumbnail-img:not(:last-child) {
+  margin-right: 10px; /* 마지막 요소를 제외한 모든 요소에 오른쪽 간격 추가 */
+}
+
+.thumbnail-img:hover {
+  transform: scale(1.02);
+}
+
+.list-item {
+  cursor: pointer;
+  text-decoration: none; /* 밑줄 제거 */
+  font-size: 1.1rem;
+  color: gray;
+}
+
+.list-item:hover,
+.list-item.active {
+  color: inherit; /* 호버 시에도 부모 요소의 색상을 상속 */
+  text-decoration: none; /* 호버 시에도 밑줄 제거 */  
+  color: black;
+  font-size: 1.2rem;
 }

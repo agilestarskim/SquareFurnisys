@@ -56,7 +56,7 @@ module.exports = {
             description: "기본에 충실한 베이직한 중역 듀크 시리즈"
           },
           {
-            title: "TOPLINE",
+            title: "GRADE 2",
             description: "심플함을 추구하는 전문가의 워크스테이션"
           }
         ]
@@ -139,17 +139,17 @@ module.exports = {
     services: [
       {
         image: "catalog.webp",
-        title: "CATALOG",
+        title: "Catalog",
         description: "스퀘어 퍼니시스의 제품 카탈로그를 확인하세요"
       },
       {
         image: "showroom.webp",
-        title: "SHOW ROOM",
+        title: "3D Showroom",
         description: "스퀘어 퍼니시스의 가구를 3D로 만나보세요"
       },
       {
         image: "portfolio.webp",
-        title: "PORTFOLIO",
+        title: "Portfolio",
         description: "스퀘어 퍼니시스의 프로젝트 사례를 살펴보세요"
       }
     ]

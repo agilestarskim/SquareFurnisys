@@ -3,16 +3,6 @@
     padding: 100px 0; /* 상하 50px 여백 */
 }
 
-/* 자식 컴포넌트 간의 간격 설정 */
-.design-consulting-container > * {
-    margin-bottom: 50px; /* 아래쪽 간격 설정 */
-}
-
-.highlight {
-    color: #214c98; /* 진한 파란색 */
-    font-weight: bold; /* 진하게 */
-}
-
 .left-img {
     border-top-left-radius: 20px; /* 왼쪽 위 모서리 둥글게 */
     border-bottom-left-radius: 20px; /* 왼쪽 아래 모서리 둥글게 */    

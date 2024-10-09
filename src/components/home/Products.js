@@ -49,10 +49,10 @@ const Products = () => {
     };
 
     return (
-        <Container>
+        <Container id="products">
             <Row className="justify-content-center">
                 <Col xs={12} className="mb-4">
-                    <h1 className="text-center">Products</h1>
+                    <h1 className="text-center menu-title">Products</h1>
                     <h4 className="text-center text-muted">제품정보</h4>
                 </Col>
             </Row>

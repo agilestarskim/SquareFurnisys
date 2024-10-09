@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { graphql } from "gatsby";
+import React, { useState } from 'react';
+import { graphql, Link } from "gatsby";
 import Layout from "../components/common/Layout";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Carousel } from 'react-bootstrap';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import './Design.css';
 
@@ -18,11 +18,12 @@ export const query = graphql`
           relativeDirectory
           name
           childImageSharp {
-            gatsbyImageData(
-              width: 2000,
+            gatsbyImageData(  
+              height: 500,                                   
               quality: 100,
-              layout: FULL_WIDTH,
-              placeholder: BLURRED
+              layout: CONSTRAINED,
+              placeholder: BLURRED,
+              transformOptions: {fit: CONTAIN, cropFocus: CENTER}            
             )
           }
         }
@@ -32,16 +33,6 @@ export const query = graphql`
 `;
 
 export default function Design({ data }) {
-  const [activeIndices, setActiveIndices] = useState([]);
-
-  const handleToggle = (index) => {
-    setActiveIndices((prevIndices) =>
-      prevIndices.includes(index)
-        ? prevIndices.filter((i) => i !== index)
-        : [...prevIndices, index]
-    );
-  };
-
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -65,33 +56,77 @@ export default function Design({ data }) {
     return { title, images };
   });
 
-  // 타이틀 앞의 숫자를 기준으로 정렬
-  items.sort((a, b) => {
-    const numA = parseInt(a.title.match(/^\d+/)[0], 10);
-    const numB = parseInt(b.title.match(/^\d+/)[0], 10);
-    return numA - numB;
-  });
+  
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [carouselIndices, setCarouselIndices] = useState(Array(items.length).fill(0));
+
+  const handleItemClick = (index) => {
+    setSelectedItem(index);
+  };
+
+  const handleThumbnailClick = (carouselIndex, imageIndex) => {
+    const newIndices = [...carouselIndices];
+    newIndices[carouselIndex] = imageIndex;
+    setCarouselIndices(newIndices);
+  };
+
+  const handleCarouselSelect = (carouselIndex, selectedIndex) => {
+    const newIndices = [...carouselIndices];
+    newIndices[carouselIndex] = selectedIndex;
+    setCarouselIndices(newIndices);
+  };
 
   return (
     <Layout>
       <Container>
-        {items.map((item, index) => (
-          <div key={index} className="item-container">
-            <div className="item-header" onClick={() => handleToggle(index)}>
-              <GatsbyImage image={item.images[0]} alt={item.title} className="item-image" />
-              <h2>{item.title}</h2>
-            </div>
-            <div className={`dropdown-content ${activeIndices.includes(index) ? 'show' : ''}`}>
-              <Row>
-                {item.images.map((relatedImage, idx) => (
-                  <Col key={idx} xl={12}>
-                    <GatsbyImage image={relatedImage} alt={`Related ${idx}`} className="related-image" />
-                  </Col>
-                ))}
-              </Row>
-            </div>
+        <div className="content-container">
+          <div className="list-container">
+            {items.map((item, index) => (
+              <div key={index}>
+                <Link to={`#${item.title}`} className={`list-item ${selectedItem === index ? 'active' : ''}`}
+                onClick={() => handleItemClick(index)}>{item.title}          
+                </Link>           
+              </div>
+            ))}
           </div>
-        ))}                
+
+          <div className="picture-container">
+            {items.map((item, index) => (
+              <div id={item.title} key={index} className="company-container">
+                <p className="company-title">{item.title}</p>
+                <Carousel 
+                  data-bs-theme="dark" 
+                  className="carousel-container"
+                  activeIndex={carouselIndices[index]}
+                  onSelect={(selectedIndex) => handleCarouselSelect(index, selectedIndex)}
+                >
+                  {item.images.map((image, idx) => (
+                    <Carousel.Item>                      
+                        <GatsbyImage 
+                          image={image} 
+                          alt={`Related ${idx}`} 
+                          className="d-block w-100 banner-image"
+                          objectFit="contain"
+                        />         
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+                <div className="thumbnail-container">
+                  {item.images.map((image, idx) => (
+                    <div key={idx} className="thumbnail-wrapper" onClick={() => handleThumbnailClick(index, idx)}>
+                      <GatsbyImage 
+                        key={idx}
+                        image={image} 
+                        alt={`Thumbnail ${idx}`} 
+                        className="thumbnail-img"  
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>   
+          </div>                 
       </Container>      
       <button className="scroll-to-top" onClick={handleScrollToTop}>▲</button>
     </Layout>

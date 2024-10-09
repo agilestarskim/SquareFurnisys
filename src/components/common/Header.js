@@ -17,10 +17,10 @@ export default function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto nav-style">
-              <Link to="/product" className="nav-link" style={navLinkStyle}>제품정보</Link>
-              <Link to="/Design" className="nav-link" style={navLinkStyle}>디자인 컨설팅</Link>
-              <Link to="/Portfolio" className="nav-link" style={navLinkStyle}>스퀘어 서비스</Link>
-              <Link to="/#square-services" className="nav-link" style={navLinkStyle}>고객지원</Link>
+              <Link to="/#products" className="nav-link" style={navLinkStyle}>제품정보</Link>
+              <Link to="/#design-consulting" className="nav-link" style={navLinkStyle}>디자인 컨설팅</Link>
+              <Link to="/#square-services" className="nav-link" style={navLinkStyle}>스퀘어 서비스</Link>
+              <Link to="/#Zsquare-services" className="nav-link" style={navLinkStyle}>고객지원</Link>
               <Link to="/About" className="nav-link" style={navLinkStyle}>회사소개</Link>
             </Nav>
           </Navbar.Collapse>      
