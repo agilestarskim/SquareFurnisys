@@ -7,9 +7,24 @@
   flex: 1;
   margin-top: 6rem;
   position: sticky;
-  top: 10rem;
+  top: 13rem;
   z-index: 900;
   height: fit-content; /* 높이를 내용에 맞게 조정 */
+}
+
+/* 모바일 뷰 스타일 */
+@media (max-width: 768px) {
+  .list-container {
+    display: none; /* 모바일 뷰에서 숨기기 */
+  }
+
+  .design-container {
+    flex-direction: column; /* 수직 정렬 */
+  }
+
+  .picture-container {
+    flex: none; /* 너비 비율 해제 */
+  }
 }
 
 .list-container > * {
@@ -30,6 +45,7 @@
 
 .banner-image {
   background-color: white;
+  height: 500px;
 }
 
 .company-title {

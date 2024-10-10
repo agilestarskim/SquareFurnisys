@@ -34,7 +34,7 @@ const Detail = ({ data, pageContext }) => {
         {topImages.length > 0 && (
           <Row className="items-background">
             {topImages.map(({ node }, index) => (
-              <Col lg={6} key={index} className="mb-5">
+              <Col lg={4} key={index} className="mb-5">
                 <GatsbyImage
                   image={getImage(node.childImageSharp)}
                   alt={node.name}
@@ -48,7 +48,7 @@ const Detail = ({ data, pageContext }) => {
         {/* 기존 이미지 배치 */}
         <Row className="items-background">
           {images.map(({ node }, index) => (
-            <Col md={4} lg={3} key={index} className="mb-5">
+            <Col md={4} lg={2} key={index} className="mb-5">
               <GatsbyImage
                 image={getImage(node.childImageSharp)}
                 alt={node.name}
@@ -62,7 +62,7 @@ const Detail = ({ data, pageContext }) => {
         {bottomImages.length > 0 && (
           <Row className="items-background">
             {bottomImages.map(({ node }, index) => (
-              <Col lg={6} key={index} className="mb-5">
+              <Col lg={4} key={index} className="mb-5">
                 <GatsbyImage
                   image={getImage(node.childImageSharp)}
                   alt={node.name}

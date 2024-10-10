@@ -3,13 +3,24 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'gatsby';
 import Image from 'react-bootstrap/Image';
 import logo from '../../images/logo.webp';
+import Popup from './Popup'; // Popup 컴포넌트를 임포트합니다.
 import './Header.css'; // 추가된 CSS 파일을 임포트합니다.
 
 export default function Header() {
   const [showProductsSubMenu, setShowProductsSubMenu] = useState(false);
   const [showServicesSubMenu, setShowServicesSubMenu] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const navLinkStyle = { fontSize: '18px', fontWeight: 'bold' };
+
+  const handleCustomerServiceClick = (e) => {
+    e.preventDefault();
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
 
   return (
     <Container fluid className="header-background">
@@ -52,12 +63,13 @@ export default function Header() {
                   </div>
                 )}
               </div>
-              <Link to="/#square-services" className="nav-link" style={navLinkStyle}>고객지원</Link>
+              <div className="nav-link" style={navLinkStyle} onClick={handleCustomerServiceClick}>고객지원</div>
               <Link to="/About" className="nav-link" style={navLinkStyle}>회사소개</Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
       </Container>
+      {showPopup && <Popup onClose={handleClosePopup} />}
     </Container>
   );
 }

@@ -6,13 +6,15 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const CardView = ({ image, imageUrl, title, description }) => {
   return (
     <div className="custom-card">
+      <div className="card-img">
       {image ? 
         (<GatsbyImage image={image} alt={title} className="card-img"/>) : 
         (imageUrl ? 
-          (<img src={imageUrl} alt={title} className="card-img"/>) : 
+          (<img src={imageUrl} alt={title} className="url-image"/>) : 
           (<div className="placeholder-img"></div>)
         )
       }
+      </div>
       <div className="card-body">
         <p className="card-title text-left">{title}</p>
         <p className="card-text text-left text-muted">{description}</p>

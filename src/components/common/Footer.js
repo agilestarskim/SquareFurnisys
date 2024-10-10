@@ -11,16 +11,16 @@ export default function Footer() {
   return (
     <Container fluid className="bg-dark text-white">      
         <Row className='pt-5 align-items-center'>
-          <Col sm={12} md={12} lg={3} className="text-center">            
+          <Col sm={12} md={12} lg={2} className="text-center">            
             <img 
               src={logo} 
               alt="회사 로고" 
               className="footer-logo" 
               onClick={scrollToTop} 
-              style={{ cursor: 'pointer' }} // 클릭 가능한 커서 스타일 추가
+              style={{ cursor: 'pointer' }}
             />                
           </Col>
-          <Col sm={12} md={12} lg={9} className="text-center">            
+          <Col sm={12} md={12} lg={10} xl={9} className="text-center">            
             <Row>
               <Col sm={12} md={4} lg={3} className="footer-item">
                 <strong className="footer-title">상호명</strong> 

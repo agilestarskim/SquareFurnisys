@@ -19,7 +19,7 @@
 }
 
 .nav-item {
-position: relative;
+  position: relative;
 }
   
 .sub-menu {
@@ -36,14 +36,15 @@ position: relative;
     padding: 0.8rem;
 }
   
-  .sub-nav-link {
-    width: 100%;
-    padding: 0.8rem;
-    white-space: nowrap;
-    color: black;
-    text-decoration: none;
-  }
+.sub-nav-link {
+  width: 100%;
+  padding: 0.8rem;
+  white-space: nowrap;
+  color: black;
+  text-decoration: none;
+}
   
-  .sub-nav-link:hover {
-    background-color: #f8f9fa;
-  }
+.sub-nav-link:hover {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+}

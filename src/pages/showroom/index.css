@@ -31,16 +31,6 @@
     background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
     padding: 8px 24px; /* 내용과 테두리 사이의 간격 */
     border-radius: 24px;
-    animation: blink 2.5s infinite; /* 1초 간격으로 깜빡이는 애니메이션 추가 */
-}
-
-@keyframes blink {
-    0%, 100% {
-    opacity: 1;
-    }
-    50% {
-    opacity: 0;
-    }
 }
 
 .model-title {

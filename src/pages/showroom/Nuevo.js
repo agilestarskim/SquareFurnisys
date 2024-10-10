@@ -57,7 +57,10 @@ function ShowroomNuevo() {
                         <pointLight position={[10, 10, 10]} intensity={1} />
                         <Model path={`/models/Nuevo/${model.name}.gltf`} size={model.size} />
                         <OrbitControls target={[0, 0, 0]} enableZoom={false} />
-                    </Canvas>                            
+                    </Canvas>
+                    <div className="canvas-overlay">
+                      <p>마우스로 360° 돌려보세요</p>
+                    </div>                             
                 </Col>  
                 <Col md={12} xl={6} className="mb-5">
                   <img 
