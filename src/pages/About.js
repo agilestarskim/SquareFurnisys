@@ -11,10 +11,10 @@ export default function About() {
 
   return (
     <Layout>
-      <Container fluid>
+      <Container fluid>        
         <Row className="row-container">
           <h1 className="about-main-title">Square Furnisys</h1>
-        </Row>
+        </Row>        
         <Row className="row-container">          
           <Col md={12} lg={4}>
             <h1 className="about-title">How we work</h1>                        

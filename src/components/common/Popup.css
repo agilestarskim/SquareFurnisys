@@ -14,11 +14,11 @@
 
 .popup-content {
     background-color: white;
-    padding: 2.5rem 4rem;
+    padding: 3rem 5rem;
     border-radius: 10px;
     box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.6);    
-    max-width: 500px;
-    max-height: 800px;
+    max-width: 600px;
+    max-height: 900px;
     text-align: left;
     margin: 1rem;
 }
@@ -28,8 +28,20 @@
 }
 
 .popup-content p {
+    font-size: 18px;
     margin: 20px 0;
     color: gray;
+}
+
+@media screen and (max-width: 768px) {
+    .popup-content {
+        padding: 2rem;
+    }
+    .popup-content p {
+        font-size: 15px;
+        margin: 10px 0;
+        color: gray;
+    }
 }
 
 .highlight {

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;    
-    padding: 5rem;
+    padding: 5rem 12rem;
 }
 
 .row-container:nth-child(even) {
@@ -32,6 +32,16 @@
     line-height: 2; /* 줄 간격을 1.5배로 설정 */
 }
 
+@media (max-width: 1440px) {
+  .row-container {    
+    padding: 2rem;
+  }
+
+  .about-title {
+    font-size: 2.5rem;           
+  }
+}
+
 /* sm 사이즈일 때 텍스트 크기 조정 */
 @media (max-width: 576px) {
   .about-title {
@@ -47,7 +57,7 @@
     margin-bottom: 2rem;
     width: 100%;
     text-align: center;       
-}
+  }
 
   .about-description {
       font-size: 1.2rem;

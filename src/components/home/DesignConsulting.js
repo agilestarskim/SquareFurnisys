@@ -77,7 +77,7 @@ const DesignConsulting = () => {
                 <button 
                 className="learn-more-button" 
                 onClick={handleNavigation}
-                >더 알아보기 &nbsp; &gt; 
+                >디자인 컨설팅 예시 &nbsp; &gt; 
                 </button>
             </div>
         </Container>
