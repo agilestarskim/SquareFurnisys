@@ -75,6 +75,6 @@ export default function Product() {
 export const Head = () => (
   <>
     <title>스퀘어 퍼니시스 - 제품정보</title>
-    <meta name="description" content="제품정보" />
+    <meta name="description" content="Workstation-워크스테이션, Excutive-익스큐티브, Partition-파티션, Storage-스토리지 사물함, Table - 테이블 책상 등 다양한 상세 제품들을 확인해보세요." />
   </>
 )

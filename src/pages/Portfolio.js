@@ -75,6 +75,6 @@ export default function Portfolio({ data }) {
 export const Head = () => (
   <>
     <title>스퀘어 퍼니시스 - 납품실적</title>
-    <meta name="description" content="납품실적" />
+    <meta name="description" content="스퀘어퍼니시스의 납품정보를 확인해보세요." />
   </>
 )

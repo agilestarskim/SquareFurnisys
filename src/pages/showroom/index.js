@@ -51,6 +51,6 @@ export default Showroom;
 export const Head = () => (
   <>
     <title>스퀘어 퍼니시스 - Showroom</title>
-    <meta name="description" content="showroom" />
+    <meta name="description" content="3D showroom을 만나보세요" />
   </>
 )
